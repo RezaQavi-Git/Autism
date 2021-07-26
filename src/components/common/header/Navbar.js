@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./navbar.css";
 
@@ -83,11 +84,9 @@ class VerticalNavbar extends React.Component {
     if (lang === "fa") {
       return (
         <div id="vertical-navbar" className={"vertical-navbar"}>
-          <a href="/">خانه</a>
-          <a href="/">طراحی</a>
-          <a href="/">منابع</a>
-          <a href="/">لینک ها</a>
-          <div class="dropdown">
+          <Link to="/">خانه</Link>
+          <Link to="/about">درباره ی ما</Link>
+          {/* <div class="dropdown">
             <div>
               <button class="dropbtn">تیم ها</button>
             </div>
@@ -96,28 +95,15 @@ class VerticalNavbar extends React.Component {
               <a href="/">تیم اونها 2</a>
               <a href="/">تیم بچه ها 3</a>
             </div>
-          </div>
-
-          <div class="dropdown">
-            <div>
-              <button class="dropbtn">تیم ها 2 </button>
-            </div>
-            <div class="dropdown-content">
-              <a href="/">تیم اول 1</a>
-              <a href="/">تیم اونها 2</a>
-              <a href="/">تیم بچه ها 3</a>
-            </div>
-          </div>
+          </div> */}
         </div>
       );
     } else {
       return (
         <div id="vertical-navbar" className={"vertical-navbar-en"}>
-          <a href="/">Home</a>
-          <a href="/">Design</a>
-          <a href="/">Resources</a>
-          <a href="/">Links</a>
-          <div class="dropdown-en">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          {/* <div class="dropdown-en">
             <div>
               <button class="dropbtn-en">Teams</button>
             </div>
@@ -126,7 +112,7 @@ class VerticalNavbar extends React.Component {
               <a href="/">Second Team 2</a>
               <a href="/">Third Team 3</a>
             </div>
-          </div>
+          </div> */}
         </div>
       );
     }
@@ -147,9 +133,9 @@ class HorizontalNavbar extends React.Component {
     if (lang === "fa") {
       return (
         <div id="horizontal-navbar" className={"horizontal-navbar"}>
-          <a href="/">خانه</a>
-          <a href="/">طراحی</a>
-          <div class="dropdown">
+          <Link to="/">خانه</Link>
+          <Link to="/about">درباره ی ما</Link>
+          {/* <div class="dropdown">
             <div>
               <button class="dropbtn">تیم ها</button>
             </div>
@@ -158,29 +144,15 @@ class HorizontalNavbar extends React.Component {
               <a href="/">تیم اونها 2</a>
               <a href="/">تیم بچه ها 3</a>
             </div>
-          </div>
-          <a href="/">منابع</a>
-          <a href="/">لینک ها</a>
-          <div class="dropdown">
-            <div>
-              <button class="dropbtn">تیم ها</button>
-            </div>
-            <div class="dropdown-content">
-              <a href="/">تیم اول 1</a>
-              <a href="/">تیم اونها 2</a>
-              <a href="/">تیم بچه ها 3</a>
-            </div>
-          </div>
+          </div> */}
         </div>
       );
     } else {
       return (
         <div id="horizontal-navbar" className={"horizontal-navbar-en"}>
-          <a href="/">Home</a>
-          <a href="/">Design</a>
-          <a href="/">Resources</a>
-          <a href="/">Links</a>
-          <div class="dropdown-en">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          {/* <div class="dropdown-en">
             <div>
               <button class="dropbtn-en">Teams</button>
             </div>
@@ -189,17 +161,7 @@ class HorizontalNavbar extends React.Component {
               <a href="/">Second Team 2</a>
               <a href="/">Third Team 3</a>
             </div>
-          </div>
-          <div class="dropdown-en">
-            <div>
-              <button class="dropbtn-en">Teams 2</button>
-            </div>
-            <div class="dropdown-content-en">
-              <a href="/">First team 1</a>
-              <a href="/">Second Team 2</a>
-              <a href="/">Third Team 3</a>
-            </div>
-          </div>
+          </div> */}
         </div>
       );
     }

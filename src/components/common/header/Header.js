@@ -3,6 +3,8 @@ import React from "react";
 import "./header.css";
 import LOGOIMG from "../../static/images/ut-logo.png";
 
+import Navbar from './Navbar';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,7 @@ class Header extends React.Component {
               className="logo-img"
             />
           </div>
+          <Navbar lang="fa" />
         </React.Fragment>
       );
     } else {
@@ -44,6 +47,7 @@ class Header extends React.Component {
               className="logo-img"
             />
           </div>
+          <Navbar lang="en" />
         </React.Fragment>
       );
     }

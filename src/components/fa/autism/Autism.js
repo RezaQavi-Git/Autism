@@ -15,7 +15,7 @@ class Autism extends React.Component {
 
   componentDidMount() {
     document.title = "اوتیسم";
-    $("body").attr("dir", "ltr");
+    $("body").attr("dir", "rtl");
   }
 
   render() {
