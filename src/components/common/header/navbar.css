@@ -1,0 +1,242 @@
+:root {
+  --navbar-bg-color: rgb(5, 32, 63);
+}
+
+
+.navbar-container {
+  width: 95%;
+  margin: auto;
+}
+
+.small-navbar {
+  width: 100%;
+  margin: auto;
+  display: none;
+  margin-top: 5%;
+}
+
+.small-navbar-button {
+  background-color: var(--navbar-bg-color);
+  border-radius: 5px;
+  padding: 5px 0px;
+  color: white;
+  font-size: 1em;
+  width: 15%;
+}
+
+/* horizontal navbar */
+.horizontal-navbar {
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--navbar-bg-color);
+}
+
+.horizontal-navbar a {
+  float: right;
+  font-size: 1.2em;
+  color: white;
+  text-align: left;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Vertical navbar */
+.vertical-navbar {
+  width: 90%;
+  margin: auto;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--navbar-bg-color);
+}
+
+.vertical-navbar a {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  color: white;
+  text-align: right;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown .dropbtn::after {
+  content: " \25BE";
+}
+
+.horizontal-navbar a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration: underline;
+}
+
+.vertical-navbar a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration: underline;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--navbar-bg-color);
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .horizontal-navbar {
+    display: none;
+  }
+
+  .horizontal-navbar-en {
+    display: none;
+  }
+
+  .small-navbar {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .vertical-navbar {
+    display: none;
+  }
+
+  .vertical-navbar-en {
+    display: none;
+  }
+}
+
+/* EN FORMAT */
+
+/* horizontal navbar */
+.horizontal-navbar-en {
+  width: 95%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--navbar-bg-color);
+}
+
+.horizontal-navbar-en a {
+  float: left;
+  font-size: 1.2em;
+  color: white;
+  text-align: left;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Vertical navbar */
+.vertical-navbar-en {
+  width: 90%;
+  margin: auto;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--navbar-bg-color);
+}
+
+.vertical-navbar-en a {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2em;
+  color: white;
+  text-align: right;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.dropdown-en {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-en .dropbtn-en {
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-en .dropbtn-en::after {
+  content: " \25BE";
+}
+
+.horizontal-navbar-en a:hover,
+.dropdown-en:hover .dropbtn-en {
+  text-decoration: underline;
+}
+
+.vertical-navbar-en a:hover,
+.dropdown-en:hover .dropbtn-en {
+  text-decoration: underline;
+}
+
+.dropdown-content-en {
+  display: none;
+  position: absolute;
+  background-color: var(--navbar-bg-color);
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content-en a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown-en:hover .dropdown-content-en {
+  display: block;
+}
