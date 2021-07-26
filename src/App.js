@@ -4,8 +4,9 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import './App.css';
 
+import './components/static/Fonts/vazir-fonts/fonts.css'
 
-import Autism from './components/autism/Autism';
+import Autism from './components/fa/autism/Autism';
 
 class App extends React.Component {
   
