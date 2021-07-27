@@ -1,8 +1,8 @@
-.descrption {
+.description {
     width: 70%;
     margin: auto;
     align-items: center;
-    margin-top: 0;
+    margin-top: 3%;
     text-align: center;
 }
 
@@ -10,12 +10,9 @@
 
 @media screen and (max-width: 600px) {
 
-    .descrption {
+    .description {
         width: 90%;
         margin: auto;
-        align-items: center;
-        margin-top: 0;
-        text-align: center;
     }
     
 }

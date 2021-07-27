@@ -4,7 +4,7 @@ import React from "react";
 import './about.css';
 
 import Language from '../header/Language';
-import Header from "../header/Language";
+import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
 class About extends React.Component {
@@ -20,7 +20,7 @@ class About extends React.Component {
         <Language lang="fa" url="/" />
         <div className="main">
           <Header lang="fa" />
-          <p className="seprator">توضیحات</p>
+          <p className="seprator">درباره ی ما</p>
           <AboutBody lang="fa" />
           <p className="seprator"></p>
           <Footer lang="fa" />
