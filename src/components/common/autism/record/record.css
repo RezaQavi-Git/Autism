@@ -17,12 +17,12 @@
 
 .title-description {
   font-size: 15px;
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 
 .record-body {
-  width: 60%;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,13 @@
   text-align: center;
 }
 
+.record-wave {
+  width: 100%;
+  min-height: 150px;
+  margin: auto;
+  background-color: teal;
+}
+/* 
 .control-button {
   width: 70%;
   margin: auto;
@@ -53,7 +60,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-}
+} */
 
 .record-voice {
   width: 80%;
@@ -70,14 +77,14 @@
   border-radius: 50%;
 }
 
-.timer {
+/* .timer {
   width: 80%;
   margin: auto;
   text-align: center;
   font-size: 2em;
   padding-top: 5%;
   color: rgb(7, 156, 255);
-}
+} */
 
 .submit-voice {
   width: 90%;
@@ -200,17 +207,24 @@
     margin-top: 20px;
   }
 
-  .control-button {
+  .record-wave {
+    width: 100%;
+    min-height: 100px;
+    margin: auto;
+    background-color: teal;
+  }
+
+  /* .control-button {
     width: 80%;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-  }
+  } */
 
   .record-voice {
-    width: 50%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -232,7 +246,6 @@
   }
 
   .voice-accept {
-    display: none;
     width: fit-content;
     margin: auto;
     font-size: 1.5rem;
