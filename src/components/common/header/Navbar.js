@@ -84,8 +84,8 @@ class VerticalNavbar extends React.Component {
     if (lang === "fa") {
       return (
         <div id="vertical-navbar" className={"vertical-navbar"}>
-          <Link to="/">خانه</Link>
-          <Link to="/about">درباره ی ما</Link>
+          <Link to="/fa">خانه</Link>
+          <Link to="/about/fa">درباره ی ما</Link>
           {/* <div class="dropdown">
             <div>
               <button class="dropbtn">تیم ها</button>
@@ -101,8 +101,8 @@ class VerticalNavbar extends React.Component {
     } else {
       return (
         <div id="vertical-navbar" className={"vertical-navbar-en"}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <Link to="/en">Home</Link>
+          <Link to="/about/en">About</Link>
           {/* <div class="dropdown-en">
             <div>
               <button class="dropbtn-en">Teams</button>
@@ -133,8 +133,8 @@ class HorizontalNavbar extends React.Component {
     if (lang === "fa") {
       return (
         <div id="horizontal-navbar" className={"horizontal-navbar"}>
-          <Link to="/">خانه</Link>
-          <Link to="/about">درباره ی ما</Link>
+          <Link to="/fa">خانه</Link>
+          <Link to="/about/fa">درباره ی ما</Link>
           {/* <div class="dropdown">
             <div>
               <button class="dropbtn">تیم ها</button>
@@ -150,8 +150,8 @@ class HorizontalNavbar extends React.Component {
     } else {
       return (
         <div id="horizontal-navbar" className={"horizontal-navbar-en"}>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <Link to="/en">Home</Link>
+          <Link to="/about/en">About</Link>
           {/* <div class="dropdown-en">
             <div>
               <button class="dropbtn-en">Teams</button>

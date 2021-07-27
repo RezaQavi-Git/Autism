@@ -7,7 +7,7 @@
 }
 
 .main-parts {
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 5%;
     display: flex;
@@ -23,9 +23,9 @@
 }
 
 .link {
-    width: 120px;
+    width: 35%;
     margin: auto;
-    padding: 50px 15px; 
+    padding: 50px 0px; 
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
@@ -57,7 +57,7 @@
     }
     
     .link {
-        width: 100px;
+        width: 30%;
         margin: auto;
         padding: 30px 10px; 
         border-radius: 50%;

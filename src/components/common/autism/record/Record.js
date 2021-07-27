@@ -9,10 +9,7 @@ import Language from "../../header/Language";
 import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 
-// import MicRecorder from "mic-recorder-to-mp3";
 import { Link } from "react-router-dom";
-
-// const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 class Record extends React.Component {
   constructor(props) {
@@ -21,22 +18,32 @@ class Record extends React.Component {
   }
 
   componentDidMount() {
-    document.title = "ضبط صدا";
-    $("body").attr("dir", "rtl");
+    const {lang, match: {params}} = this.props;
+    const title = lang === "fa" ? "ضبط صدا" : "Record Voice";
+    const dir = lang === "fa" ? "rtl" : "ltr";
+
+    document.title =  title ;
+    $("body").attr("dir",  dir );
   }
 
   render() {
+    const {lang, match: {params}} = this.props;
+    
     return (
       <React.Fragment>
-        <Language lang="fa" url="/" />
+        <Language lang={lang} url="/" />
         <div className="main">
-          <Header lang="fa" />
+          <Header lang={lang} />
           <p className="seprator"></p>
           <RecordBody />
           <p className="seprator"></p>
-          <Link to="/profile"><button id="record-accepted" className="voice-accept">ثبت و ادامه</button></Link>
+          <Link to={"/profile/" + lang}>
+            <button id="record-accepted" className="voice-accept">
+              {lang === "fa" ? "قبول و ادامه" : "Accept & Continue"}
+            </button>
+          </Link>
           <p className="seprator"></p>
-          <Footer lang="fa" />
+          <Footer lang={lang} />
         </div>
       </React.Fragment>
     );
@@ -50,22 +57,25 @@ class RecordBody extends React.Component {
   }
 
   render() {
+    const lang = this.props.lang;
+
     return (
       <React.Fragment>
         <div className="title">
           <div className="title-head">
-            <p>ضبط صدا</p>
+            <p>{lang === "fa" ? "ضبط صدا" : "Record Voice"}</p>
           </div>
           <div className="title-description">
             <p>
-              با ضبط و ارسال صدای گریه فرزند خود، ما را در این پروژه ی تحقیقاتی
-              همراهی کنید
+              {lang === "fa"
+                ? "با ضبط و ارسال صدای گریه فرزند خود، ما را در این پروژه ی تحقیقاتی همراهی کنید"
+                : "Join us in this research project by recording and sending the sound of your child crying"}
             </p>
           </div>
         </div>
         <br />
         <div className="record-body">
-          <RecordBox lang="fa" />
+          <RecordBox lang={lang} />
         </div>
       </React.Fragment>
     );
@@ -85,34 +95,34 @@ class RecordBox extends React.Component {
     this.Interval = null;
   }
 
-  timer() {
-    var seconds = 0;
-    var tens = 0;
-    var appendTens = document.getElementById("tens");
-    var appendSeconds = document.getElementById("seconds");
-    clearInterval(this.Interval);
-    this.Interval = setInterval(startTimer, 10);
-    function startTimer() {
-      tens++;
-      if (tens <= 9) {
-        appendTens.innerHTML = "0" + tens;
-      }
-      if (tens > 9) {
-        appendTens.innerHTML = tens;
-      }
-      if (tens > 99) {
-        console.log("seconds");
-        seconds++;
-        appendSeconds.innerHTML = "0" + seconds;
-        tens = 0;
-        appendTens.innerHTML = "0" + 0;
-      }
+  // timer() {
+  //   var seconds = 0;
+  //   var tens = 0;
+  //   var appendTens = document.getElementById("tens");
+  //   var appendSeconds = document.getElementById("seconds");
+  //   clearInterval(this.Interval);
+  //   this.Interval = setInterval(startTimer, 10);
+  //   function startTimer() {
+  //     tens++;
+  //     if (tens <= 9) {
+  //       appendTens.innerHTML = "0" + tens;
+  //     }
+  //     if (tens > 9) {
+  //       appendTens.innerHTML = tens;
+  //     }
+  //     if (tens > 99) {
+  //       console.log("seconds");
+  //       seconds++;
+  //       appendSeconds.innerHTML = "0" + seconds;
+  //       tens = 0;
+  //       appendTens.innerHTML = "0" + 0;
+  //     }
 
-      if (seconds > 9) {
-        appendSeconds.innerHTML = seconds;
-      }
-    }
-  }
+  //     if (seconds > 9) {
+  //       appendSeconds.innerHTML = seconds;
+  //     }
+  //   }
+  // }
 
   start = () => {
     this.setState({
@@ -154,54 +164,59 @@ class RecordBox extends React.Component {
   }
 
   render() {
+    const lang = this.props.lang;
+
+
     return (
-        <div className="record">
-          <div className="recorder">
-              <div className="record-voice">
-                <ReactMic
-                  record={this.state.record}
-                  className="record-wave"
-                  onStop={this.onStop.bind(this)}
-                  strokeColor="#000000"
-                  mimeType="audio/wav"
-                  bitRate={256000}
-                  sampleRate={44100}
-                />
-                <img
-                  src={Microphone}
-                  alt="mirophone"
-                  onClick={this.state.status ? this.start : this.stop}
-                  className="record-button"
-                />
-                {/* <audio
+      <div className="record">
+        <div className="recorder">
+          <div className="record-voice">
+            <ReactMic
+              record={this.state.record}
+              className="record-wave"
+              onStop={this.onStop.bind(this)}
+              strokeColor="#000000"
+              mimeType="audio/wav"
+              bitRate={256000}
+              sampleRate={44100}
+            />
+            <img
+              src={Microphone}
+              alt="mirophone"
+              onClick={this.state.status ? this.start : this.stop}
+              className="record-button"
+            />
+            {/* <audio
                   src={this.state.blobURL}
                   controls="controls"
                   className="record-player"
                 /> */}
-              </div>
-              <div
-                id="submit"
-                className={this.state.recorded ? "submit-voice" : "hidden"}
-              >
-                <p className="notife">آیا صدای ضبط شده مورد تایید شماست؟</p>
-                <div className="submit-voice-buttons">
-                  <button
-                    className="submit button"
-                    onClick={this.showAcceptButtun.bind(this)}
-                  >
-                    بله
-                  </button>
-                  <button
-                    className="cancel button"
-                    onClick={this.cancelVoice.bind(this)}
-                  >
-                    انصراف
-                  </button>
-                </div>
-              </div>
-            <br />
           </div>
+          <div
+            id="submit"
+            className={this.state.recorded ? "submit-voice" : "hidden"}
+          >
+            <p className="notife">
+            {lang === "fa" ? "آیا صدای ضبط شده مورد تایید شماست؟" : "Do you approve of the recorded sound?"}
+              </p>
+            <div className="submit-voice-buttons">
+              <button
+                className="submit button"
+                onClick={this.showAcceptButtun.bind(this)}
+              >
+                {lang === "fa" ? "بله" : "Yes"}
+              </button>
+              <button
+                className="cancel button"
+                onClick={this.cancelVoice.bind(this)}
+              >
+                {lang === "fa" ? "انصراف" : "Cancel"}
+              </button>
+            </div>
+          </div>
+          <br />
         </div>
+      </div>
       // <div className="record">
       //   <div className="recorder">
       //     <div className="control-button">

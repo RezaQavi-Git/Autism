@@ -15,33 +15,44 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    document.title = "پرسشنامه";
-    $("body").attr("dir", "rtl");
+    const {lang, match: {params}} = this.props;
+
+    console.log(lang)
+    const title = (lang === "fa") ? "پروفایل" : "Profile";
+    const dir = lang === "fa" ? "rtl" : "ltr";
+
+    document.title = title;
+    $("body").attr("dir", dir);
   }
 
   render() {
-    // const lang = this.props.lang;
+    const {lang, match: {params}} = this.props;
+
     return (
       <React.Fragment>
-        <Language lang="fa" url="/" />
+        <Language lang={lang} url="/" />
         <div className="main">
-          <Header lang="fa" />
+          <Header lang={lang} />
           <p id="section1" className="seprator">
-            بخش اول
+            {lang === "fa" ? "بخش اول" : "Part One"}
           </p>
-          <QuestionsP1 lang="fa" />
+          <QuestionsP1 lang={lang} />
           <p id="section2" className="seprator">
-            بخش دوم
+            {lang === "fa" ? "بخش دوم" : "Part Two"}
           </p>
-          <QuestionsP2 lang="fa" />
+          <QuestionsP2 lang={lang} />
           <p id="section3" className="seprator">
-            بخش سوم
+            {lang === "fa" ? "بخش سوم" : "Part Three"}
           </p>
-          <QuestionsP3 lang="fa" />
+          <QuestionsP3 lang={lang} />
           <p className="seprator"></p>
-          <Link to="/"> <button className="accept">ثبت و ادامه</button> </Link>
+          <Link to="/">
+            <button className="accept">
+              {lang === "fa" ? "ثبت و ادامه" : "Accept & Continue"}
+            </button>
+          </Link>
           <p className="seprator"></p>
-          <Footer lang="fa" />
+          <Footer lang={lang} />
         </div>
       </React.Fragment>
     );
@@ -55,6 +66,9 @@ class QuestionsP1 extends React.Component {
   }
 
   render() {
+
+    const lang = this.props.lang;
+
     const years = [];
     const months = [];
     const days = [];
@@ -74,15 +88,15 @@ class QuestionsP1 extends React.Component {
         <div className="questions-body">
           <div id="gender" className="question">
             <div className="question-title">
-              <p>جنسیت</p>
+              <p>{lang === "fa" ? "جنسیت" : "Gender"}</p>
             </div>
             <div className="question-answer gender">
               <form>
                 <input type="radio" id="men" name="gender" value="men" />
-                <label for="men">پسر</label>
+                <label for="men">{lang === "fa" ? "پسر" : "Boy"}</label>
                 <br />
                 <input type="radio" id="female" name="gender" value="female" />
-                <label for="female">دختر</label>
+                <label for="female">{lang === "fa" ? "دختر" : "Girl"}</label>
                 <br />
               </form>
             </div>
@@ -90,19 +104,19 @@ class QuestionsP1 extends React.Component {
 
           <div id="birthday" className="question">
             <div className="question-title">
-              <p>تاریخ تولد</p>
+              <p>{lang === "fa" ? "تاریخ تولد" : "Birth Day"}</p>
             </div>
             <div className="question-answer birthday">
               <select id="day" name="day">
-                <option>روز</option>
+                <option>{lang === "fa" ? "روز" : "Day"}</option>
                 {days}
               </select>
               <select id="month" name="month">
-                <option>ماه</option>
+                <option>{lang === "fa" ? "ماه" : "Month"}</option>
                 {months}
               </select>
               <select id="year" name="year">
-                <option>سال</option>
+                <option>{lang === "fa" ? "سال" : "Year"}</option>
                 {years}
               </select>
             </div>
@@ -110,10 +124,11 @@ class QuestionsP1 extends React.Component {
 
           <div id="phone-number" className="question">
             <div className="question-title">
-              <p>شماره تماس</p>
+              <p>{lang === "fa" ? "شماره تماس" : "Phone Number"}</p>
               <p style={{ "font-size": "0.5em" }}>
-                پر کردن این قسمت اجباری نیست و در صورتی که تمایل دارید پس از
-                بررسی ها با شما تماس گرفته شود این قسمت را تکمیل کنید
+                {lang === "fa"
+                  ? "پر کردن این قسمت اجباری نیست و در صورتی که تمایل دارید پس ازبررسی ها با شما تماس گرفته شود این قسمت را تکمیل کنید"
+                  : "Filling in this section is not mandatory and if you want to be contacted after the reviews, fill in this section"}
               </p>
             </div>
             <div className="question-answer phone-number">
@@ -125,7 +140,9 @@ class QuestionsP1 extends React.Component {
             </div>
           </div>
           <a href="#section2">
-            <button className="next-button">بعدی</button>
+            <button className="next-button">
+              {lang === "fa" ? "بعدی" : "Next"}
+            </button>
           </a>
         </div>
       </React.Fragment>
@@ -140,12 +157,16 @@ class QuestionsP2 extends React.Component {
   }
 
   render() {
+
+    const lang = this.props.lang;
+
+
     return (
       <React.Fragment>
         <div className="questions-body">
           <div id="cry-reason" className="question ">
             <div className="question-title">
-              <p>دلیل گریه</p>
+              <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
             </div>
             <div className="question-answer cry-reason">
               <form>
@@ -155,7 +176,9 @@ class QuestionsP2 extends React.Component {
                   name="option1"
                   value="Hunger"
                 />
-                <label for="option1">گرسنگی</label>
+                <label for="option1">
+                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -163,7 +186,9 @@ class QuestionsP2 extends React.Component {
                   name="option2"
                   value="Thirst"
                 />
-                <label for="option2">تشنگی</label>
+                <label for="option2">
+                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -171,23 +196,17 @@ class QuestionsP2 extends React.Component {
                   name="option3"
                   value="lackofsleep"
                 />
-                <label for="option3">خواب آلودگی یا کم خوابی</label>
+                <label for="option3">
+                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                </label>
                 <br />
-                <input 
-                  type="radio" 
-                  id="option4" 
-                  name="option4" 
-                  value="pain" 
-                />
-                <label for="option4">درد یا بیماری</label>
+                <input type="radio" id="option4" name="option4" value="pain" />
+                <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
                 <br />
-                <input 
-                  type="radio" 
-                  id="option5" 
-                  name="option5" 
-                  value="dirty" 
-                />
-                <label for="option5">کثیف بودن</label>
+                <input type="radio" id="option5" name="option5" value="dirty" />
+                <label for="option5">
+                  {lang === "fa" ? "کثیف بودن" : "Being dirty"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -195,7 +214,9 @@ class QuestionsP2 extends React.Component {
                   name="option6"
                   value="excuse"
                 />
-                <label for="option6">بهانه گیری</label>
+                <label for="option6">
+                  {lang === "fa" ? "بهانه گیری" : "Excuse-making"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -203,7 +224,11 @@ class QuestionsP2 extends React.Component {
                   name="option7"
                   value="notcooperate"
                 />
-                <label for="option7">عدم تمایل به همکاری با بزرگتر ها</label>
+                <label for="option7">
+                  {lang === "fa"
+                    ? "همکاری نکردن با بزرگتر"
+                    : "Not cooperating with adults"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -211,7 +236,9 @@ class QuestionsP2 extends React.Component {
                   name="option8"
                   value="vaccine"
                 />
-                <label for="option8">درد واکسن</label>
+                <label for="option8">
+                  {lang === "fa" ? "درد واکسن" : "Vaccine pain"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -219,7 +246,9 @@ class QuestionsP2 extends React.Component {
                   name="option9"
                   value="sepration"
                 />
-                <label for="option9">جدایی از مادر</label>
+                <label for="option9">
+                  {lang === "fa" ? "جدایی از مادر" : "Separation from mother"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -227,7 +256,7 @@ class QuestionsP2 extends React.Component {
                   name="option10"
                   value="fear"
                 />
-                <label for="option10">ترس</label>
+                <label for="option10">{lang === "fa" ? "ترس" : "Fear"}</label>
                 <br />
                 <input
                   type="radio"
@@ -235,7 +264,9 @@ class QuestionsP2 extends React.Component {
                   name="option11"
                   value="dontknow"
                 />
-                <label for="option11">نمیدانم</label>
+                <label for="option11">
+                  {lang === "fa" ? "نمیدانم" : "I do not know"}
+                </label>
                 <br />
                 <input
                   type="radio"
@@ -243,13 +274,17 @@ class QuestionsP2 extends React.Component {
                   name="option12"
                   value="noanswer"
                 />
-                <label for="option12">پاسخ نمیدهم</label>
+                <label for="option12">
+                  {lang === "fa" ? "پاسخ نمیدهم" : "I do not answer"}
+                </label>
                 <br />
               </form>
             </div>
           </div>
           <a href="#section3">
-            <button className="next-button">بعدی</button>
+            <button className="next-button">
+              {lang === "fa" ? "بعدی" : "Next"}
+            </button>
           </a>
         </div>
       </React.Fragment>
@@ -272,12 +307,20 @@ class QuestionsP3 extends React.Component {
   }
 
   render() {
+
+    const lang = this.props.lang;
+
+
     return (
       <React.Fragment>
         <div className="questions-body">
           <div id="autism-question1" className="question">
             <div className="question-title autism-questions-title">
-              <p>مبتلا به اوتیسم است ؟</p>
+              <p>
+                {lang === "fa"
+                  ? " مبتلا به اوتیسم است ؟"
+                  : "Does he/she have autism?"}
+              </p>
             </div>
             <div className="question-answer autism-questions-answer">
               <form>
@@ -287,7 +330,7 @@ class QuestionsP3 extends React.Component {
                   name="autism-question1"
                   value="yes"
                 />
-                <label for="autism-question-yes">بله</label>
+                <label for="autism-question-yes">{lang==="fa" ? "بله" : "Yes"}</label>
                 <br />
                 <input
                   type="radio"
@@ -295,14 +338,16 @@ class QuestionsP3 extends React.Component {
                   name="autism-question1"
                   value="no"
                 />
-                <label for="autism-question-no">خیر</label>
+                <label for="autism-question-no">{lang==="fa" ? "نه" : "No"}</label>
                 <br />
               </form>
             </div>
           </div>
           <div id="autism-question1" className="question">
             <div className="question-title autism-questions-title">
-              <p>خواهر یا برادر مبتلا دارد ؟</p>
+              <p>
+                {lang === "fa" ? "خواهر یا برادر مبتلا دارد ؟" : "Do he/she have a sibling with autism?"}
+              </p>
             </div>
             <div className="question-answer autism-questions-answer">
               <form>
@@ -312,7 +357,7 @@ class QuestionsP3 extends React.Component {
                   name="autism-question2"
                   value="yes"
                 />
-                <label for="autism-question2-yes">بله</label>
+                <label for="autism-question2-yes">{lang==="fa" ? "بله" : "Yes"}</label>
                 <br />
                 <input
                   type="radio"
@@ -320,7 +365,7 @@ class QuestionsP3 extends React.Component {
                   name="autism-question2"
                   value="no"
                 />
-                <label for="autism-question2-no">خیر</label>
+                <label for="autism-question2-no">{lang==="fa" ? "نه" : "No"}</label>
                 <br />
               </form>
             </div>
@@ -328,7 +373,10 @@ class QuestionsP3 extends React.Component {
 
           <div id="autism-question-3" className="question">
             <div className="question-title autism-questions-title">
-              <p>بیماری یا اختلال دیگری دارد؟</p>
+              <p>
+                {lang === "fa" ? "بیماری یا اختلال دیگری دارد؟" : "Does he/she have another disease or disorder?"}
+                
+              </p>
             </div>
             <div className="question-answer autism-questions-answer">
               <form>
@@ -339,7 +387,7 @@ class QuestionsP3 extends React.Component {
                   value="yes"
                   onClick={this.show_extra.bind(this)}
                 />
-                <label for="autism-question-3-yes">بله</label>
+                <label for="autism-question-3-yes">{lang==="fa" ? "بله" : "Yes"}</label>
                 <br />
                 <input
                   type="radio"
@@ -347,7 +395,7 @@ class QuestionsP3 extends React.Component {
                   name="autism-question-3"
                   value="no"
                 />
-                <label for="autism-question-3-no">خیر</label>
+                <label for="autism-question-3-no">{lang==="fa" ? "نه" : "No"}</label>
                 <br />
               </form>
             </div>
@@ -355,7 +403,9 @@ class QuestionsP3 extends React.Component {
 
           <div id="autism-question-4" className="hidden">
             <div className="question-title autism-questions-title">
-              <p>بیماری یا اختلال دیگری دارد؟</p>
+              <p>
+                {lang === "fa" ? "کدامیک از بیماری های رو به رو ؟" : "Which diseases do you face?"}
+              </p>
             </div>
             <div className="question-answer autism-questions-answer">
               <form>
@@ -365,7 +415,10 @@ class QuestionsP3 extends React.Component {
                   name="autism-question-4"
                   value="ADHD"
                 />
-                <label for="autism-question-4-ADHD">بیش فعالی</label>
+                <label for="autism-question-4-ADHD">
+                  {lang === "fa" ? "بیش فعالی" : "ADHD"}
+                  
+                </label>
                 <br />
                 <input
                   type="checkbox"
@@ -373,7 +426,9 @@ class QuestionsP3 extends React.Component {
                   name="autism-question-4"
                   value="Mentalretardation"
                 />
-                <label for="autism-question-4-Mentalretardation">عقب ماندگی ذهنی</label>
+                <label for="autism-question-4-Mentalretardation">
+                  {lang === "fa" ? "عقب ماندگی ذهنی" : "Mental retardation"}
+                </label>
                 <br />
                 <input
                   type="checkbox"
@@ -381,7 +436,10 @@ class QuestionsP3 extends React.Component {
                   name="autism-question-4"
                   value="Growthdisorder"
                 />
-                <label for="autism-question-4-Growthdisorder">اختلال رشد(مغزی)</label>
+                <label for="autism-question-4-Growthdisorder">
+                  {lang === "fa" ? "اختلال رشد(مغزی)" : "Growth disorder (brain)"}
+                  
+                </label>
                 <br />
                 <input
                   type="checkbox"
@@ -390,7 +448,10 @@ class QuestionsP3 extends React.Component {
                   value="other"
                   onClick={this.show_textarea.bind(this)}
                 />
-                <label for="autism-question-4-other">سایر</label>
+                <label for="autism-question-4-other">
+                  {lang === "fa" ? "سایر" : "Other"}
+                  
+                </label>
                 <br />
                 <textarea
                   type="textarea"
