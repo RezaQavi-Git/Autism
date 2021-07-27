@@ -6,6 +6,7 @@ import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 
 import "./questionnaire.css";
+import { Link } from "react-router-dom";
 
 class Questionnaire extends React.Component {
   constructor(props) {
@@ -38,9 +39,8 @@ class Questionnaire extends React.Component {
           </p>
           <QuestionsP3 lang="fa" />
           <p className="seprator"></p>
-          <button className="accept">ثبت و ادامه</button>
+          <Link to="/record"> <button className="accept">ثبت و ادامه</button> </Link>
           <p className="seprator"></p>
-
           <Footer lang="fa" />
         </div>
       </React.Fragment>
