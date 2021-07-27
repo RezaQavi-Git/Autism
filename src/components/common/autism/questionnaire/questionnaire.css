@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(229, 197, 255);
+  background-color: #166b9a;
   border-radius: 5px;
   font-size: 1.2em;
+  color: white;
 }
 
 .question {
@@ -44,6 +45,8 @@
   color: white;
   border-radius: 5px;
   font-size: 1.2em;
+  border: none;
+  text-align: center;
 }
 
 .gender {
@@ -163,11 +166,14 @@
 
   .cry-reason {
     width: 80%;
+    font-size: 0.9em;
+
   }
 
   .autism-questions-title {
     width: 45%;
     margin: auto;
+    font-size: 0.9em;
   }
 
   .autism-questions-answer {
