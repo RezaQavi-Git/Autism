@@ -27,10 +27,10 @@ class MainPage extends React.Component {
           اتفاق می افتد، بحث می کنند.
         </p>
         <div className="main-parts">
-          <Link to="/questionnaire" className="record link">
+          <Link to="/questionnaire" className="questionnaire link">
             {lang === "fa" ? "پرسشنامه" : "Record Voice"}
           </Link>
-          <Link to="/" className="questionnaire link">
+          <Link to="/record" className="record-link link">
             {lang === "fa" ? "ضبط صدا" : "Record Voice"}
           </Link>
         </div>
