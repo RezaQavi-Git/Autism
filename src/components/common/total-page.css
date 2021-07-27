@@ -31,7 +31,8 @@
   color: black;
   font-size: 2.5em;
   margin-top: 2%;
-  border-bottom: 2px black solid;
+  margin-bottom: 2%;
+  border-bottom: 1px black solid;
 }
 
 .en {
@@ -39,10 +40,24 @@
   direction: ltr;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 800px) {
   .lang-img {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+  }
+
+  .seprator {
+    text-align: center;
+    color: black;
+    font-size: 1.5em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+    border-bottom: 1px black solid;
   }
 }
