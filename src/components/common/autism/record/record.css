@@ -1,0 +1,279 @@
+* {
+  font-family: Vazir;
+}
+
+.title {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.title-head {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  font-size: 2em;
+}
+
+.title-description {
+  font-size: 15px;
+  width: 60%;
+  margin: auto;
+}
+
+.record-body {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 15px;
+  min-height: 150px;
+}
+
+.record {
+  width: 80%;
+  margin: auto;
+}
+
+.recorder {
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.control-button {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.record-voice {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.record-button {
+  background-color: rgb(248, 9, 9);
+  width: 70px;
+  border-radius: 50%;
+}
+
+.timer {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 2em;
+  padding-top: 5%;
+  color: rgb(7, 156, 255);
+}
+
+.submit-voice {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notife {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+  padding-top: 5%;
+  color: rgb(87, 13, 26);
+}
+
+.submit-voice-buttons {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  border: none;
+}
+
+.submit {
+  background-color: rgb(34, 170, 7);
+}
+
+.cancel {
+  background-color: rgb(255, 39, 10);
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .title-head {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    font-size: 2em;
+  }
+
+  .title-description {
+    width: 60%;
+    font-size: 1.1em;
+    margin: auto;
+  }
+
+  .record-body {
+    width: 100%;
+    margin: auto;
+  }
+
+  .questions {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+  }
+
+  .question-options {
+    width: 90%;
+    margin: auto;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+
+  .question-title {
+    text-align: center;
+  }
+
+  .hints {
+    width: 90%;
+    margin: auto;
+  }
+
+  .health-tips {
+    color: red;
+    list-style-type: none;
+  }
+
+  .accept-button {
+    width: 20%;
+    margin: auto;
+    padding: 0 10px;
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 5%;
+  }
+
+  .recorder {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .control-button {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .record-voice {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .notife {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 1em;
+    padding-top: 5%;
+  }
+
+  .submit-voice {
+    width: 90%;
+    margin: auto;
+  }
+
+  .voice-accept {
+    display: none;
+    width: fit-content;
+    margin: auto;
+    font-size: 1.5rem;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .title-description {
+    width: 80%;
+    font-size: 1em;
+    margin: auto;
+  }
+
+  .questions {
+    width: 100%;
+    margin: auto;
+  }
+
+  .question-options {
+    width: 100%;
+    margin: auto;
+  }
+
+  .hints {
+    width: 100%;
+    margin: auto;
+  }
+
+  .submit-voice {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .submit-voice * {
+    margin-top: 2%;
+  }
+}
