@@ -132,6 +132,15 @@
   background-color: rgb(255, 39, 10);
 }
 
+.voice-accept {
+  width: fit-content;
+  margin: auto;
+  font-size: 1.5rem;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 800px) {
   .title {
     width: 100%;
@@ -243,15 +252,6 @@
   .submit-voice {
     width: 90%;
     margin: auto;
-  }
-
-  .voice-accept {
-    width: fit-content;
-    margin: auto;
-    font-size: 1.5rem;
-    background-color: green;
-    color: white;
-    border-radius: 5px;
   }
 }
 

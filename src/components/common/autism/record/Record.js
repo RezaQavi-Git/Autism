@@ -136,16 +136,10 @@ class RecordBox extends React.Component {
   }
 
   cancelVoice() {
-    var Tens = document.getElementById("tens");
-    var Seconds = document.getElementById("seconds");
-    Tens.innerHTML = "00";
-    Seconds.innerHTML = "00";
     this.setState({
       status: true,
       recorded: false,
-      isRecording: false,
       blobURL: null,
-      isBlocked: false,
       record: false,
     });
   }
