@@ -6,25 +6,7 @@
   background-color: white;
 }
 
-.lang-button {
-  position: absolute;
-  top: 8px;
-  right: 5%;
-  font-size: 1.25em;
-}
 
-.lang-button-en {
-  position: absolute;
-  top: 8px;
-  left: 5%;
-  font-size: 1.25em;
-}
-
-.lang-img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
 
 .seprator {
   text-align: center;

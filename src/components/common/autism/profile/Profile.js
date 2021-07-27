@@ -5,10 +5,10 @@ import Language from "../../header/Language";
 import Header from "../../header/Header";
 import Footer from "../../footer/Footer";
 
-import "./questionnaire.css";
+import "./profile.css";
 import { Link } from "react-router-dom";
 
-class Questionnaire extends React.Component {
+class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -39,7 +39,7 @@ class Questionnaire extends React.Component {
           </p>
           <QuestionsP3 lang="fa" />
           <p className="seprator"></p>
-          <Link to="/record"> <button className="accept">ثبت و ادامه</button> </Link>
+          <Link to="/"> <button className="accept">ثبت و ادامه</button> </Link>
           <p className="seprator"></p>
           <Footer lang="fa" />
         </div>
@@ -408,4 +408,4 @@ class QuestionsP3 extends React.Component {
   }
 }
 
-export default Questionnaire;
+export default Profile;

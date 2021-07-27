@@ -18,12 +18,12 @@
     color: white;
 }
 
-.questionnaire {
+.profile {
     background-color: red;
 }
 
 .link {
-    width: fit-content;
+    width: 120px;
     margin: auto;
     padding: 50px 15px; 
     border-radius: 50%;
@@ -57,7 +57,7 @@
     }
     
     .link {
-        width: fit-content;
+        width: 100px;
         margin: auto;
         padding: 30px 10px; 
         border-radius: 50%;

@@ -34,7 +34,7 @@ class Record extends React.Component {
           <p className="seprator"></p>
           <RecordBody />
           <p className="seprator"></p>
-          <Link to="/questionnaire"><button id="record-accepted" className="voice-accept">ثبت و ادامه</button></Link>
+          <Link to="/profile"><button id="record-accepted" className="voice-accept">ثبت و ادامه</button></Link>
           <p className="seprator"></p>
           <Footer lang="fa" />
         </div>
