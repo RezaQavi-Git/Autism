@@ -1,3 +1,9 @@
+:root {
+  --green : #00cc00;
+  --blue: #23354a;
+}
+
+
 .fa {
   text-align: right;
 }
@@ -13,20 +19,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #166b9a;
+  background-color: var(--blue);
   border-radius: 5px;
   font-size: 1.2em;
   color: white;
 }
 
 .question {
-  width: 80%;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin: 10px;
+  margin-top: 1%;
   text-align: center;
   font-size: 1.2em;
   border: 1px black solid;
@@ -49,7 +55,7 @@
 
 .next-button {
   width: fit-content;
-  background-color: rgb(35, 141, 14);
+  background-color: var(--green);
   color: white;
   border-radius: 5px;
   font-size: 1.2em;
@@ -58,8 +64,6 @@
 }
 
 .gender {
-  display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
@@ -67,8 +71,12 @@
 .birthday {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+
+.birthday * {
+  font-size: 0.8em;
 }
 
 .phone-number {
@@ -85,13 +93,9 @@
   margin: auto;
 }
 
-.cry-reason-answer {
-  width: 100%;
+.cry-reason-answer-options {
+  width: 80%;
   margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
 }
 
 
@@ -114,6 +118,7 @@
   margin: auto;
 }
 
+
 .other-textarea {
   width: 90%;
   margin: auto;
@@ -123,10 +128,18 @@
   width: fit-content;
   margin: auto;
   font-size: 1.5rem;
-  background-color: green;
+  background-color: var(--green);
   color: white;
   border-radius: 5px;
+  border: none;
 }
+
+.big-button {
+  width: 20px;
+  height: 20px;
+  margin: 0% 2%;
+}
+
 
 @media screen and (max-width: 550px) {
   .questions-body {
@@ -137,7 +150,8 @@
   .question {
     width: 95%;
     margin: auto;
-    margin: 10px ;
+    margin: 2% 0%;
+
     font-size: 1em;
   }
 
@@ -154,8 +168,6 @@
 
   .next-button {
     width: fit-content;
-    background-color: rgb(35, 141, 14);
-    color: white;
     border-radius: 5px;
     font-size: 1em;
   }
@@ -172,7 +184,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    text-align: right;
   }
 
   .phone-number {
@@ -184,11 +195,17 @@
     text-align: center;
   }
 
-  .cry-reason {
+  .cry-reason-answer {
     width: 80%;
+    margin: auto;
     font-size: 0.9em;
-
   }
+
+  .cry-reason-answer-options {
+    width: 90%;
+    margin: auto;
+  }
+  
 
   .autism-questions-title {
     width: 45%;
@@ -199,7 +216,25 @@
   .autism-questions-answer {
     width: 50%;
     margin: auto;
-    text-align: right;
+  }
+
+  #autism-question-4 {
+    width: 90%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #autism-question-4 .autism-questions-title {
+    width: 80%;
+    margin: auto;
+    font-size: 0.9em;
+  }
+
+  #autism-question-4 .autism-questions-answer {
+    width: 80%;
+    margin: auto;
   }
 
   .other-textarea {

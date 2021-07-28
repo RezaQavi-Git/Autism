@@ -91,10 +91,10 @@ class QuestionsP1 extends React.Component {
             </div>
             <div className="question-answer gender">
               <form>
-                <input type="radio" id="men" name="gender" value="men" />
+                <input type="radio" className="big-button" id="men" name="gender" value="men" />
                 <label for="men">{lang === "fa" ? "پسر" : "Boy"}</label>
                 <br />
-                <input type="radio" id="female" name="gender" value="female" />
+                <input type="radio" className="big-button" id="female" name="gender" value="female" />
                 <label for="female">{lang === "fa" ? "دختر" : "Girl"}</label>
                 <br />
               </form>
@@ -168,11 +168,12 @@ class QuestionsP2 extends React.Component {
               <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
             </div>
             <div className={"question-answer cry-reason-answer " + lang}>
-              <form>
+              <form className={"cry-reason-answer-options " + lang }> 
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="option1"
-                  name="option1"
+                  name="options"
                   value="Hunger"
                 />
                 <label for="option1">
@@ -180,9 +181,10 @@ class QuestionsP2 extends React.Component {
                 </label>
                 <br />
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="option2"
-                  name="option2"
+                  name="options"
                   value="Thirst"
                 />
                 <label for="option2">
@@ -191,26 +193,38 @@ class QuestionsP2 extends React.Component {
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option3"
-                  name="option3"
+                  name="options"
                   value="lackofsleep"
                 />
                 <label for="option3">
                   {lang === "fa" ? "گرسنگی" : "Hunger"}
                 </label>
                 <br />
-                <input type="radio" id="option4" name="option4" value="pain" />
+                <input 
+                  type="radio" 
+                  className="big-button"
+                  id="option4" 
+                  name="options" 
+                  value="pain" />
                 <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
                 <br />
-                <input type="radio" id="option5" name="option5" value="dirty" />
+                <input 
+                  type="radio" 
+                  className="big-button"
+                  id="option5" 
+                  name="options" 
+                  value="dirty" />
                 <label for="option5">
                   {lang === "fa" ? "کثیف بودن" : "Being dirty"}
                 </label>
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option6"
-                  name="option6"
+                  name="options"
                   value="excuse"
                 />
                 <label for="option6">
@@ -219,8 +233,9 @@ class QuestionsP2 extends React.Component {
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option7"
-                  name="option7"
+                  name="options"
                   value="notcooperate"
                 />
                 <label for="option7">
@@ -231,8 +246,9 @@ class QuestionsP2 extends React.Component {
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option8"
-                  name="option8"
+                  name="options"
                   value="vaccine"
                 />
                 <label for="option8">
@@ -241,8 +257,9 @@ class QuestionsP2 extends React.Component {
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option9"
-                  name="option9"
+                  name="options"
                   value="sepration"
                 />
                 <label for="option9">
@@ -251,16 +268,18 @@ class QuestionsP2 extends React.Component {
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option10"
-                  name="option10"
+                  name="options"
                   value="fear"
                 />
                 <label for="option10">{lang === "fa" ? "ترس" : "Fear"}</label>
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option11"
-                  name="option11"
+                  name="options"
                   value="dontknow"
                 />
                 <label for="option11">
@@ -269,8 +288,9 @@ class QuestionsP2 extends React.Component {
                 <br />
                 <input
                   type="radio"
+                  className="big-button"
                   id="option12"
-                  name="option12"
+                  name="options"
                   value="noanswer"
                 />
                 <label for="option12">
@@ -313,7 +333,7 @@ class QuestionsP3 extends React.Component {
     return (
       <React.Fragment>
         <div className="questions-body">
-          <div id="autism-question1" className="question">
+          <div id="autism-question-1" className="question">
             <div className={"question-title autism-questions-title " + lang} >
               <p>
                 {lang === "fa"
@@ -324,7 +344,8 @@ class QuestionsP3 extends React.Component {
             <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="autism-question1-yes"
                   name="autism-question1"
                   value="yes"
@@ -332,17 +353,18 @@ class QuestionsP3 extends React.Component {
                 <label for="autism-question-yes">{lang==="fa" ? "بله" : "Yes"}</label>
                 <br />
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="autism-question1-no"
                   name="autism-question1"
                   value="no"
                 />
-                <label for="autism-question-no">{lang==="fa" ? "نه" : "No"}</label>
+                <label for="autism-question-no">{lang==="fa" ? "خیر" : "No"}</label>
                 <br />
               </form>
             </div>
           </div>
-          <div id="autism-question1" className="question">
+          <div id="autism-question-2" className="question">
             <div className={"question-title autism-questions-title " + lang}>
               <p>
                 {lang === "fa" ? "خواهر یا برادر مبتلا دارد ؟" : "Do he/she have a sibling with autism?"}
@@ -351,7 +373,8 @@ class QuestionsP3 extends React.Component {
             <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="autism-question2-yes"
                   name="autism-question2"
                   value="yes"
@@ -359,12 +382,13 @@ class QuestionsP3 extends React.Component {
                 <label for="autism-question2-yes">{lang==="fa" ? "بله" : "Yes"}</label>
                 <br />
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="autism-question2-no"
                   name="autism-question2"
                   value="no"
                 />
-                <label for="autism-question2-no">{lang==="fa" ? "نه" : "No"}</label>
+                <label for="autism-question2-no">{lang==="fa" ? "خیر" : "No"}</label>
                 <br />
               </form>
             </div>
@@ -380,7 +404,8 @@ class QuestionsP3 extends React.Component {
             <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="autism-question-3-yes"
                   name="autism-question-3"
                   value="yes"
@@ -389,12 +414,13 @@ class QuestionsP3 extends React.Component {
                 <label for="autism-question-3-yes">{lang==="fa" ? "بله" : "Yes"}</label>
                 <br />
                 <input
-                  type="radio"
+                  type="radio" 
+                  className="big-button"
                   id="autism-question-3-no"
                   name="autism-question-3"
                   value="no"
                 />
-                <label for="autism-question-3-no">{lang==="fa" ? "نه" : "No"}</label>
+                <label for="autism-question-3-no">{lang==="fa" ? "خیر" : "No"}</label>
                 <br />
               </form>
             </div>
@@ -410,6 +436,7 @@ class QuestionsP3 extends React.Component {
               <form>
                 <input
                   type="checkbox"
+                  className="big-button"
                   id="autism-question-4-ADHD"
                   name="autism-question-4"
                   value="ADHD"
@@ -421,6 +448,7 @@ class QuestionsP3 extends React.Component {
                 <br />
                 <input
                   type="checkbox"
+                  className="big-button"
                   id="autism-question-4-Mentalretardation"
                   name="autism-question-4"
                   value="Mentalretardation"
@@ -431,6 +459,7 @@ class QuestionsP3 extends React.Component {
                 <br />
                 <input
                   type="checkbox"
+                  className="big-button"
                   id="autism-question-4-Growthdisorder"
                   name="autism-question-4"
                   value="Growthdisorder"
@@ -442,6 +471,7 @@ class QuestionsP3 extends React.Component {
                 <br />
                 <input
                   type="checkbox"
+                  className="big-button"
                   id="autism-question-4-other"
                   name="autism-question-4"
                   value="other"
