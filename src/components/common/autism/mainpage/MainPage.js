@@ -24,7 +24,7 @@ class MainPage extends React.Component {
             {lang === "fa" ? "پروفایل" : "Profile"}
           </Link>
           <Link to={"/record/" + lang} className="record-link link">
-            {lang === "fa" ? "ضبط صدا" : "Record Voice"}
+            {lang === "fa" ? "ضبط صدا" : "Record"}
           </Link>
         </div>
       </React.Fragment>

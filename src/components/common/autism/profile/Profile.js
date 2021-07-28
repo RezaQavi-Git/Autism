@@ -16,8 +16,6 @@ class Profile extends React.Component {
 
   componentDidMount() {
     const {lang, match: {params}} = this.props;
-
-    console.log(lang)
     const title = (lang === "fa") ? "پروفایل" : "Profile";
     const dir = lang === "fa" ? "rtl" : "ltr";
 
@@ -30,7 +28,7 @@ class Profile extends React.Component {
 
     return (
       <React.Fragment>
-        <Language lang={lang} url="/" />
+        <Language lang={lang} url={"/profile/" + lang } />
         <div className="main">
           <Header lang={lang} />
           <p id="section1" className="seprator">

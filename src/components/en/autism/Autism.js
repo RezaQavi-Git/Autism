@@ -21,7 +21,7 @@ class Autism extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Language lang="en" url="/" />
+        <Language lang="en" url="/en" />
         <div className="main">
           <Header lang="en" />
           <p className="seprator">Description</p>

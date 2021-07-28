@@ -31,7 +31,7 @@ class Record extends React.Component {
     
     return (
       <React.Fragment>
-        <Language lang={lang} url="/" />
+        <Language lang={lang} url={"/record/" + lang } />
         <div className="main">
           <Header lang={lang} />
           <p className="seprator"></p>
