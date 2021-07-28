@@ -18,6 +18,7 @@ class Record extends React.Component {
   }
 
   componentDidMount() {
+
     const {lang, match: {params}} = this.props;
     const title = lang === "fa" ? "ضبط صدا" : "Record Voice";
     const dir = lang === "fa" ? "rtl" : "ltr";
@@ -35,7 +36,7 @@ class Record extends React.Component {
         <div className="main">
           <Header lang={lang} />
           <p className="seprator"></p>
-          <RecordBody />
+          <RecordBody lang={lang}/>
           <p className="seprator"></p>
           <Link to={"/profile/" + lang}>
             <button id="record-accepted" className="voice-accept">
@@ -196,8 +197,8 @@ class RecordBox extends React.Component {
             id="submit"
             className={this.state.recorded ? "submit-voice" : "hidden"}
           >
-            <p className="notife">
-            {lang === "fa" ? "آیا صدای ضبط شده مورد تایید شماست؟" : "Do you approve of the recorded sound?"}
+            <p className="notife ">
+            {lang === "fa" ? "آیا صدای ضبط شده مورد تایید شماست؟" : "Do you approve of the recorded sound ? "}
               </p>
             <div className="submit-voice-buttons">
               <button
