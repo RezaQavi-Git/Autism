@@ -19,7 +19,7 @@
 
 .en {
   text-align: left;
-  direction: ltr;
+  /* direction: ltr; */
 }
 
 .hidden {

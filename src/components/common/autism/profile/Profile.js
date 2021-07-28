@@ -44,7 +44,8 @@ class Profile extends React.Component {
           </p>
           <QuestionsP3 lang={lang} />
           <p className="seprator"></p>
-          <Link to="/">
+          <Link to={"/" + lang}
+          >
             <button className="accept">
               {lang === "fa" ? "ثبت و ادامه" : "Accept & Continue"}
             </button>
@@ -83,9 +84,9 @@ class QuestionsP1 extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="questions-body">
+        <div className={(lang==="fa") ? "questions-body" : "questions-body en"}>
           <div id="gender" className="question">
-            <div className="question-title">
+            <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
               <p>{lang === "fa" ? "جنسیت" : "Gender"}</p>
             </div>
             <div className="question-answer gender">
@@ -101,7 +102,7 @@ class QuestionsP1 extends React.Component {
           </div>
 
           <div id="birthday" className="question">
-            <div className="question-title">
+            <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
               <p>{lang === "fa" ? "تاریخ تولد" : "Birth Day"}</p>
             </div>
             <div className="question-answer birthday">
@@ -121,7 +122,7 @@ class QuestionsP1 extends React.Component {
           </div>
 
           <div id="phone-number" className="question">
-            <div className="question-title">
+            <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
               <p>{lang === "fa" ? "شماره تماس" : "Phone Number"}</p>
               <p style={{ "font-size": "0.5em" }}>
                 {lang === "fa"
@@ -163,10 +164,10 @@ class QuestionsP2 extends React.Component {
       <React.Fragment>
         <div className="questions-body">
           <div id="cry-reason" className="question ">
-            <div className="question-title">
+            <div className="question-title cry-reason-title">
               <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
             </div>
-            <div className="question-answer cry-reason">
+            <div className={"question-answer cry-reason-answer " + lang}>
               <form>
                 <input
                   type="radio"
@@ -313,14 +314,14 @@ class QuestionsP3 extends React.Component {
       <React.Fragment>
         <div className="questions-body">
           <div id="autism-question1" className="question">
-            <div className="question-title autism-questions-title">
+            <div className={"question-title autism-questions-title " + lang} >
               <p>
                 {lang === "fa"
                   ? " مبتلا به اوتیسم است ؟"
                   : "Does he/she have autism?"}
               </p>
             </div>
-            <div className="question-answer autism-questions-answer">
+            <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
                   type="radio"
@@ -342,12 +343,12 @@ class QuestionsP3 extends React.Component {
             </div>
           </div>
           <div id="autism-question1" className="question">
-            <div className="question-title autism-questions-title">
+            <div className={"question-title autism-questions-title " + lang}>
               <p>
                 {lang === "fa" ? "خواهر یا برادر مبتلا دارد ؟" : "Do he/she have a sibling with autism?"}
               </p>
             </div>
-            <div className="question-answer autism-questions-answer">
+            <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
                   type="radio"
@@ -370,13 +371,13 @@ class QuestionsP3 extends React.Component {
           </div>
 
           <div id="autism-question-3" className="question">
-            <div className="question-title autism-questions-title">
+            <div className={"question-title autism-questions-title " + lang}>
               <p>
                 {lang === "fa" ? "بیماری یا اختلال دیگری دارد؟" : "Does he/she have another disease or disorder?"}
                 
               </p>
             </div>
-            <div className="question-answer autism-questions-answer">
+            <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
                   type="radio"
@@ -400,12 +401,12 @@ class QuestionsP3 extends React.Component {
           </div>
 
           <div id="autism-question-4" className="hidden">
-            <div className="question-title autism-questions-title">
+            <div className={"question-title autism-questions-title " + lang}>
               <p>
                 {lang === "fa" ? "کدامیک از بیماری های رو به رو ؟" : "Which diseases do you face?"}
               </p>
             </div>
-            <div className="question-answer autism-questions-answer">
+            <div className={"question-answer autism-questions-answer " + lang}>
               <form>
                 <input
                   type="checkbox"

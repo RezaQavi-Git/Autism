@@ -1,5 +1,14 @@
+.fa {
+  text-align: right;
+}
+
+.en {
+  text-align: left;
+}
+
+
 .questions-body {
-  width: 80%;
+  width: 70%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -28,7 +37,6 @@
 .question-title {
   width: 40%;
   margin: auto;
-  text-align: right;
   padding-right: 5%;
   padding-left: 5%;
 }
@@ -61,7 +69,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  text-align: right;
 }
 
 .phone-number {
@@ -73,25 +80,38 @@
   text-align: center;
 }
 
-.cry-reason {
+.cry-reason-title {
+  width: 30%;
+  margin: auto;
+}
+
+.cry-reason-answer {
   width: 100%;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  text-align: right;
+}
+
+
+.cry-reason-answer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .autism-questions-title {
-  width: 40%;
+  width: 50%;
   margin: auto;
 }
 
 .autism-questions-answer {
   width: 50%;
   margin: auto;
-  text-align: right;
 }
 
 .other-textarea {
