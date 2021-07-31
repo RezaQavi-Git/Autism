@@ -15,11 +15,11 @@
   justify-content: space-between;
   align-items: center;
   font-size: 2em;
-  color: white;
+  color: var(--white);
 }
 
 .profile {
-  background-color: red;
+  background-color: var(--red);
 }
 
 .link {
@@ -29,11 +29,11 @@
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
-  color: white;
+  color: var(--white);
 }
 
 .record-link {
-  background-color: green;
+  background-color:var(--green);
 }
 
 @media screen and (max-width: 1000px) {
@@ -44,7 +44,7 @@
     border-radius: 50%;
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: var(--white);
     margin-top: 5%;
   }
 }

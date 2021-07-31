@@ -1,8 +1,3 @@
-:root {
-  --footer-bg-color: #054e79;
-  --text-color: white;
-}
-
 * {
   font-family: Vazir;
 }
@@ -14,14 +9,14 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  background-color: var(--footer-bg-color);
+  background-color: var(--dark-blue);
   font-size: 1em;
 }
 
 .footer * {
   margin: auto;
   width: 80%;
-  color: var(--text-color);
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: baseline;
@@ -41,14 +36,14 @@
 .footer-copyright {
   width: 100%;
   text-align: center;
-  background-color: var(--footer-bg-color);
+  background-color: var(--dark-blue);
   font-size: 1em;
-  color: var(--text-color);
+  color: var(--white);
 }
 
 .footer-copyright a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--white);
 }
 
 @media screen and (max-width: 450px) {
@@ -59,7 +54,7 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    background-color: var(--footer-bg-color);
+    background-color: var(--dark-blue);
     font-size: 1em;
   }
 

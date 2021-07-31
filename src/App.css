@@ -1,3 +1,11 @@
+:root {
+  --green: #3eb650;
+  --red: #e12b38;
+  --dark-blue: #484f5e;
+  --light-blue: #484f5e;
+  --white: #ffffff;
+}
+
 *{
   font-family: Vazir;
   margin: 0;

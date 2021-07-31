@@ -1,7 +1,3 @@
-:root {
-  --navbar-bg-color: rgb(5, 32, 63);
-}
-
 .fa {
   text-align: right;
 }
@@ -23,7 +19,7 @@
 }
 
 .small-navbar-button {
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
   border-radius: 5px;
   padding: 5px 0px;
   color: white;
@@ -39,7 +35,7 @@
   margin-top: 5%;
   border-radius: 5px;
   overflow: hidden;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
 }
 
 .horizontal-navbar-fa a {
@@ -62,7 +58,7 @@
   margin-top: 5%;
   border-radius: 5px;
   overflow: hidden;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
 }
 
 .vertical-navbar a {
@@ -108,7 +104,7 @@
 .dropdown-fa-content {
   display: none;
   position: absolute;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
   min-width: 110px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -161,7 +157,7 @@
   margin-top: 5%;
   border-radius: 5px;
   overflow: hidden;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
 }
 
 .horizontal-navbar-en a {
@@ -184,7 +180,7 @@
   margin-top: 5%;
   border-radius: 5px;
   overflow: hidden;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
 }
 
 .vertical-navbar-en a {
@@ -230,7 +226,7 @@
 .dropdown-en-content {
   display: none;
   position: absolute;
-  background-color: var(--navbar-bg-color);
+  background-color: var(--dark-blue);
   min-width: 110px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
