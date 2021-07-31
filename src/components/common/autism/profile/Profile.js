@@ -8,6 +8,9 @@ import Footer from "../../footer/Footer";
 import "./profile.css";
 import { Link } from "react-router-dom";
 
+import Cookies from 'universal-cookie';
+
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -64,6 +67,12 @@ class QuestionsP1 extends React.Component {
     this.state = {};
   }
 
+  handelChange(event) {
+    const cookies = new Cookies();
+    cookies.set(event.target.name, event.target.value, { path: '/profile' });
+    console.log(cookies.get(event.target.name));
+  }
+
   render() {
 
     const lang = this.props.lang;
@@ -91,16 +100,16 @@ class QuestionsP1 extends React.Component {
     return (
       <React.Fragment>
         <div className={(lang==="fa") ? "questions-body" : "questions-body en"}>
-          <div id="gender" className="question">
+          <div id="gender" className="question" >
             <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
               <p>{lang === "fa" ? "جنسیت" : "Gender"}</p>
             </div>
             <div className="question-answer gender">
-              <form>
-                <input type="radio" className="big-button" id="men" name="gender" value="men" />
+              <form onChange={this.handelChange.bind(this)}>
+                <input type="radio" className="big-button" id="men" name="gender" value="men"/>
                 <label for="men">{lang === "fa" ? "پسر" : "Boy"}</label>
                 <br />
-                <input type="radio" className="big-button" id="female" name="gender" value="female" />
+                <input type="radio" className="big-button" id="female" name="gender" value="female"/>
                 <label for="female">{lang === "fa" ? "دختر" : "Girl"}</label>
                 <br />
               </form>
@@ -112,15 +121,15 @@ class QuestionsP1 extends React.Component {
               <p>{lang === "fa" ? "تاریخ تولد" : "Birth Day"}</p>
             </div>
             <div className="question-answer birthday">
-              <select id="day" name="day">
+              <select id="day" name="day" onChange={this.handelChange.bind(this)}>
                 <option>{lang === "fa" ? "روز" : "Day"}</option>
                 {days}
               </select>
-              <select id="month" name="month">
+              <select id="month" name="month" onChange={this.handelChange.bind(this)}>
                 <option>{lang === "fa" ? "ماه" : "Month"}</option>
                 {months}
               </select>
-              <select id="year" name="year">
+              <select id="year" name="year" onChange={this.handelChange.bind(this)}>
                 <option>{lang === "fa" ? "سال" : "Year"}</option>
                 {years}
               </select>
@@ -139,8 +148,10 @@ class QuestionsP1 extends React.Component {
             <div className="question-answer phone-number">
               <input
                 className="phone-number-input"
+                name="phone-number"
                 type="text"
                 placeholder="09105555555"
+                onChange={this.handelChange.bind(this)}
               />
             </div>
           </div>
@@ -161,6 +172,12 @@ class QuestionsP2 extends React.Component {
     this.state = {};
   }
 
+  handelChange(event) {
+    const cookies = new Cookies();
+    cookies.set(event.target.name, event.target.value, { path: '/profile' });
+    console.log(cookies.get(event.target.name));
+  }
+  
   render() {
 
     const lang = this.props.lang;
@@ -174,12 +191,12 @@ class QuestionsP2 extends React.Component {
               <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
             </div>
             <div className={"question-answer cry-reason-answer " + lang}>
-              <form className={"cry-reason-answer-options " + lang }> 
+              <form className={"cry-reason-answer-options " + lang } onChange={this.handelChange.bind(this)}> 
                 <input
                   type="radio" 
                   className="big-button"
                   id="option1"
-                  name="options"
+                  name="cry-reson"
                   value="Hunger"
                 />
                 <label for="option1">
@@ -190,7 +207,7 @@ class QuestionsP2 extends React.Component {
                   type="radio" 
                   className="big-button"
                   id="option2"
-                  name="options"
+                  name="cry-reson"
                   value="Thirst"
                 />
                 <label for="option2">
@@ -201,7 +218,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option3"
-                  name="options"
+                  name="cry-reson"
                   value="lackofsleep"
                 />
                 <label for="option3">
@@ -212,7 +229,7 @@ class QuestionsP2 extends React.Component {
                   type="radio" 
                   className="big-button"
                   id="option4" 
-                  name="options" 
+                  name="cry-reson" 
                   value="pain" />
                 <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
                 <br />
@@ -220,7 +237,7 @@ class QuestionsP2 extends React.Component {
                   type="radio" 
                   className="big-button"
                   id="option5" 
-                  name="options" 
+                  name="cry-reson" 
                   value="dirty" />
                 <label for="option5">
                   {lang === "fa" ? "کثیف بودن" : "Being dirty"}
@@ -230,7 +247,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option6"
-                  name="options"
+                  name="cry-reson"
                   value="excuse"
                 />
                 <label for="option6">
@@ -241,7 +258,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option7"
-                  name="options"
+                  name="cry-reson"
                   value="notcooperate"
                 />
                 <label for="option7">
@@ -254,7 +271,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option8"
-                  name="options"
+                  name="cry-reson"
                   value="vaccine"
                 />
                 <label for="option8">
@@ -265,7 +282,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option9"
-                  name="options"
+                  name="cry-reson"
                   value="sepration"
                 />
                 <label for="option9">
@@ -276,7 +293,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option10"
-                  name="options"
+                  name="cry-reson"
                   value="fear"
                 />
                 <label for="option10">{lang === "fa" ? "ترس" : "Fear"}</label>
@@ -285,7 +302,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option11"
-                  name="options"
+                  name="cry-reson"
                   value="dontknow"
                 />
                 <label for="option11">
@@ -296,7 +313,7 @@ class QuestionsP2 extends React.Component {
                   type="radio"
                   className="big-button"
                   id="option12"
-                  name="options"
+                  name="cry-reson"
                   value="noanswer"
                 />
                 <label for="option12">
@@ -331,6 +348,25 @@ class QuestionsP3 extends React.Component {
     document.getElementById("textarea").style.display = "flex";
   }
 
+  componentDidMount() {
+    const cookies = new Cookies();
+    cookies.set("autism-question-4", "", { path: '/profile' });
+
+  }
+
+  handelChange(event) {
+    const cookies = new Cookies();
+
+    if(event.target.name === "autism-question-4") {
+      cookies.set(event.target.name, event.target.value + " " + cookies.get(event.target.name), { path: '/profile' });
+      console.log(cookies.get(event.target.name));
+    } else{
+      cookies.set(event.target.name, event.target.value, { path: '/profile' });
+      console.log(cookies.get(event.target.name));
+    }
+
+  }
+
   render() {
 
     const lang = this.props.lang;
@@ -348,7 +384,7 @@ class QuestionsP3 extends React.Component {
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
-              <form>
+              <form onChange={this.handelChange.bind(this)}>
                 <input
                   type="radio" 
                   className="big-button"
@@ -377,7 +413,7 @@ class QuestionsP3 extends React.Component {
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
-              <form>
+              <form onChange={this.handelChange.bind(this)}>
                 <input
                   type="radio" 
                   className="big-button"
@@ -408,7 +444,7 @@ class QuestionsP3 extends React.Component {
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
-              <form>
+              <form onChange={this.handelChange.bind(this)}>
                 <input
                   type="radio" 
                   className="big-button"
@@ -439,7 +475,7 @@ class QuestionsP3 extends React.Component {
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
-              <form>
+              <form onChange={this.handelChange.bind(this)}>
                 <input
                   type="checkbox"
                   className="big-button"
