@@ -5,8 +5,7 @@ import "./App.css";
 
 import "./components/static/Fonts/vazir-fonts/fonts.css";
 
-import Autism from "./components/fa/autism/Autism";
-import AutismEN from "./components/en/autism/Autism";
+import Autism from "./Autism";
 
 import About from "./components/common/about/About";
 import Record from "./components/common/autism/record/Record";
@@ -17,8 +16,17 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact="true" path="/fa" component={Autism}></Route>
-          <Route exact="true" path="/en" component={AutismEN}></Route>
+          <Route
+            exact="true"
+            path="/fa"
+            render={(props) => <Autism lang="fa" {...props} />}
+          ></Route>
+
+          <Route
+            exact="true"
+            path="/en"
+            render={(props) => <Autism lang="en" {...props} />}
+          ></Route>
 
           <Route
             exact="true"
