@@ -1,8 +1,7 @@
 :root {
-  --green : #00cc00;
+  --green: #00cc00;
   --blue: #23354a;
 }
-
 
 .fa {
   text-align: right;
@@ -11,7 +10,6 @@
 .en {
   text-align: left;
 }
-
 
 .questions-body {
   width: 80%;
@@ -98,7 +96,6 @@
   margin: auto;
 }
 
-
 .cry-reason-answer {
   width: 100%;
   margin: auto;
@@ -117,7 +114,6 @@
   width: 50%;
   margin: auto;
 }
-
 
 .other-textarea {
   width: 90%;
@@ -139,7 +135,6 @@
   height: 20px;
   margin: 0% 2%;
 }
-
 
 @media screen and (max-width: 550px) {
   .questions-body {
@@ -198,7 +193,6 @@
     width: 90%;
     margin: auto;
   }
-  
 
   .autism-questions-title {
     width: 45%;

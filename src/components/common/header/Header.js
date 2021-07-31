@@ -3,7 +3,7 @@ import React from "react";
 import "./header.css";
 import LOGOIMG from "../../static/images/ut-logo.png";
 
-import Navbar from './Navbar';
+import Navbar from "./Navbar";
 
 class Header extends React.Component {
   constructor(props) {

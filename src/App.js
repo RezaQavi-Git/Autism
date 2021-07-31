@@ -5,7 +5,7 @@ import "./App.css";
 
 import "./components/static/Fonts/vazir-fonts/fonts.css";
 
-import Autism from "./Autism";
+import Autism from "./autism/Autism";
 
 import About from "./components/common/about/About";
 import Record from "./components/common/autism/record/Record";

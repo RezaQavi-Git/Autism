@@ -67,7 +67,7 @@ class VerticalNavbar extends React.Component {
         <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
         <div class={"dropdown-" + lang}>
           <div>
-            <button class={"dropbtn-" +lang }>
+            <button class={"dropbtn-" + lang}>
               {lang === "fa" ? "تیم ها" : "Teams"}
             </button>
           </div>
@@ -101,7 +101,7 @@ class HorizontalNavbar extends React.Component {
         <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
         <div class={"dropdown-" + lang}>
           <div>
-            <button class={"dropbtn-" +lang } >
+            <button class={"dropbtn-" + lang}>
               {lang === "fa" ? "تیم ها" : "Teams"}
             </button>
           </div>

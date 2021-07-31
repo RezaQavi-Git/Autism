@@ -8,8 +8,7 @@ import Footer from "../../footer/Footer";
 import "./profile.css";
 import { Link } from "react-router-dom";
 
-import Cookies from 'universal-cookie';
-
+import Cookies from "universal-cookie";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -18,8 +17,11 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    const {lang, match: {params}} = this.props;
-    const title = (lang === "fa") ? "پروفایل" : "Profile";
+    const {
+      lang,
+      match: { params },
+    } = this.props;
+    const title = lang === "fa" ? "پروفایل" : "Profile";
     const dir = lang === "fa" ? "rtl" : "ltr";
 
     document.title = title;
@@ -27,11 +29,14 @@ class Profile extends React.Component {
   }
 
   render() {
-    const {lang, match: {params}} = this.props;
+    const {
+      lang,
+      match: { params },
+    } = this.props;
 
     return (
       <React.Fragment>
-        <Language lang={lang} url={"/profile/" + lang } />
+        <Language lang={lang} url={"/profile/" + lang} />
         <div className="main">
           <Header lang={lang} />
           <p id="section1" className="seprator">
@@ -47,8 +52,7 @@ class Profile extends React.Component {
           </p>
           <QuestionsP3 lang={lang} />
           <p className="seprator"></p>
-          <Link to={"/" + lang}
-          >
+          <Link to={"/" + lang}>
             <button className="accept">
               {lang === "fa" ? "ثبت و ادامه" : "Accept & Continue"}
             </button>
@@ -69,19 +73,18 @@ class QuestionsP1 extends React.Component {
 
   handelChange(event) {
     const cookies = new Cookies();
-    cookies.set(event.target.name, event.target.value, { path: '/profile' });
+    cookies.set(event.target.name, event.target.value, { path: "/profile" });
     console.log(cookies.get(event.target.name));
   }
 
   render() {
-
     const lang = this.props.lang;
 
     const years = [];
     const months = [];
     const days = [];
     var i;
-    if(lang==="fa") {
+    if (lang === "fa") {
       for (i = 1390; i < 1430; i++) {
         years.push(<option value={i}>{i}</option>);
       }
@@ -99,17 +102,33 @@ class QuestionsP1 extends React.Component {
 
     return (
       <React.Fragment>
-        <div className={(lang==="fa") ? "questions-body" : "questions-body en"}>
-          <div id="gender" className="question" >
-            <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
+        <div className={lang === "fa" ? "questions-body" : "questions-body en"}>
+          <div id="gender" className="question">
+            <div
+              className={
+                lang === "fa" ? "question-title fa" : "question-title en"
+              }
+            >
               <p>{lang === "fa" ? "جنسیت" : "Gender"}</p>
             </div>
             <div className="question-answer gender">
               <form onChange={this.handelChange.bind(this)}>
-                <input type="radio" className="big-button" id="men" name="gender" value="men"/>
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="men"
+                  name="gender"
+                  value="men"
+                />
                 <label for="men">{lang === "fa" ? "پسر" : "Boy"}</label>
                 <br />
-                <input type="radio" className="big-button" id="female" name="gender" value="female"/>
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="female"
+                  name="gender"
+                  value="female"
+                />
                 <label for="female">{lang === "fa" ? "دختر" : "Girl"}</label>
                 <br />
               </form>
@@ -117,19 +136,35 @@ class QuestionsP1 extends React.Component {
           </div>
 
           <div id="birthday" className="question">
-            <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
+            <div
+              className={
+                lang === "fa" ? "question-title fa" : "question-title en"
+              }
+            >
               <p>{lang === "fa" ? "تاریخ تولد" : "Birth Day"}</p>
             </div>
             <div className="question-answer birthday">
-              <select id="day" name="day" onChange={this.handelChange.bind(this)}>
+              <select
+                id="day"
+                name="day"
+                onChange={this.handelChange.bind(this)}
+              >
                 <option>{lang === "fa" ? "روز" : "Day"}</option>
                 {days}
               </select>
-              <select id="month" name="month" onChange={this.handelChange.bind(this)}>
+              <select
+                id="month"
+                name="month"
+                onChange={this.handelChange.bind(this)}
+              >
                 <option>{lang === "fa" ? "ماه" : "Month"}</option>
                 {months}
               </select>
-              <select id="year" name="year" onChange={this.handelChange.bind(this)}>
+              <select
+                id="year"
+                name="year"
+                onChange={this.handelChange.bind(this)}
+              >
                 <option>{lang === "fa" ? "سال" : "Year"}</option>
                 {years}
               </select>
@@ -137,7 +172,11 @@ class QuestionsP1 extends React.Component {
           </div>
 
           <div id="phone-number" className="question">
-            <div className={lang==="fa" ? "question-title fa" : "question-title en"}>
+            <div
+              className={
+                lang === "fa" ? "question-title fa" : "question-title en"
+              }
+            >
               <p>{lang === "fa" ? "شماره تماس" : "Phone Number"}</p>
               <p style={{ "font-size": "0.5em" }}>
                 {lang === "fa"
@@ -174,14 +213,12 @@ class QuestionsP2 extends React.Component {
 
   handelChange(event) {
     const cookies = new Cookies();
-    cookies.set(event.target.name, event.target.value, { path: '/profile' });
+    cookies.set(event.target.name, event.target.value, { path: "/profile" });
     console.log(cookies.get(event.target.name));
   }
-  
+
   render() {
-
     const lang = this.props.lang;
-
 
     return (
       <React.Fragment>
@@ -191,9 +228,12 @@ class QuestionsP2 extends React.Component {
               <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
             </div>
             <div className={"question-answer cry-reason-answer " + lang}>
-              <form className={"cry-reason-answer-options " + lang } onChange={this.handelChange.bind(this)}> 
+              <form
+                className={"cry-reason-answer-options " + lang}
+                onChange={this.handelChange.bind(this)}
+              >
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="option1"
                   name="cry-reson"
@@ -204,7 +244,7 @@ class QuestionsP2 extends React.Component {
                 </label>
                 <br />
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="option2"
                   name="cry-reson"
@@ -225,20 +265,22 @@ class QuestionsP2 extends React.Component {
                   {lang === "fa" ? "گرسنگی" : "Hunger"}
                 </label>
                 <br />
-                <input 
-                  type="radio" 
+                <input
+                  type="radio"
                   className="big-button"
-                  id="option4" 
-                  name="cry-reson" 
-                  value="pain" />
+                  id="option4"
+                  name="cry-reson"
+                  value="pain"
+                />
                 <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
                 <br />
-                <input 
-                  type="radio" 
+                <input
+                  type="radio"
                   className="big-button"
-                  id="option5" 
-                  name="cry-reson" 
-                  value="dirty" />
+                  id="option5"
+                  name="cry-reson"
+                  value="dirty"
+                />
                 <label for="option5">
                   {lang === "fa" ? "کثیف بودن" : "Being dirty"}
                 </label>
@@ -350,33 +392,33 @@ class QuestionsP3 extends React.Component {
 
   componentDidMount() {
     const cookies = new Cookies();
-    cookies.set("autism-question-4", "", { path: '/profile' });
-
+    cookies.set("autism-question-4", "", { path: "/profile" });
   }
 
   handelChange(event) {
     const cookies = new Cookies();
 
-    if(event.target.name === "autism-question-4") {
-      cookies.set(event.target.name, event.target.value + " " + cookies.get(event.target.name), { path: '/profile' });
+    if (event.target.name === "autism-question-4") {
+      cookies.set(
+        event.target.name,
+        event.target.value + " " + cookies.get(event.target.name),
+        { path: "/profile" }
+      );
       console.log(cookies.get(event.target.name));
-    } else{
-      cookies.set(event.target.name, event.target.value, { path: '/profile' });
+    } else {
+      cookies.set(event.target.name, event.target.value, { path: "/profile" });
       console.log(cookies.get(event.target.name));
     }
-
   }
 
   render() {
-
     const lang = this.props.lang;
-
 
     return (
       <React.Fragment>
         <div className="questions-body">
           <div id="autism-question-1" className="question">
-            <div className={"question-title autism-questions-title " + lang} >
+            <div className={"question-title autism-questions-title " + lang}>
               <p>
                 {lang === "fa"
                   ? " مبتلا به اوتیسم است ؟"
@@ -386,22 +428,26 @@ class QuestionsP3 extends React.Component {
             <div className={"question-answer autism-questions-answer " + lang}>
               <form onChange={this.handelChange.bind(this)}>
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="autism-question1-yes"
                   name="autism-question1"
                   value="yes"
                 />
-                <label for="autism-question-yes">{lang==="fa" ? "بله" : "Yes"}</label>
+                <label for="autism-question-yes">
+                  {lang === "fa" ? "بله" : "Yes"}
+                </label>
                 <br />
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="autism-question1-no"
                   name="autism-question1"
                   value="no"
                 />
-                <label for="autism-question-no">{lang==="fa" ? "خیر" : "No"}</label>
+                <label for="autism-question-no">
+                  {lang === "fa" ? "خیر" : "No"}
+                </label>
                 <br />
               </form>
             </div>
@@ -409,28 +455,34 @@ class QuestionsP3 extends React.Component {
           <div id="autism-question-2" className="question">
             <div className={"question-title autism-questions-title " + lang}>
               <p>
-                {lang === "fa" ? "خواهر یا برادر مبتلا دارد ؟" : "Do he/she have a sibling with autism?"}
+                {lang === "fa"
+                  ? "خواهر یا برادر مبتلا دارد ؟"
+                  : "Do he/she have a sibling with autism?"}
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
               <form onChange={this.handelChange.bind(this)}>
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="autism-question2-yes"
                   name="autism-question2"
                   value="yes"
                 />
-                <label for="autism-question2-yes">{lang==="fa" ? "بله" : "Yes"}</label>
+                <label for="autism-question2-yes">
+                  {lang === "fa" ? "بله" : "Yes"}
+                </label>
                 <br />
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="autism-question2-no"
                   name="autism-question2"
                   value="no"
                 />
-                <label for="autism-question2-no">{lang==="fa" ? "خیر" : "No"}</label>
+                <label for="autism-question2-no">
+                  {lang === "fa" ? "خیر" : "No"}
+                </label>
                 <br />
               </form>
             </div>
@@ -439,30 +491,35 @@ class QuestionsP3 extends React.Component {
           <div id="autism-question-3" className="question">
             <div className={"question-title autism-questions-title " + lang}>
               <p>
-                {lang === "fa" ? "بیماری یا اختلال دیگری دارد؟" : "Does he/she have another disease or disorder?"}
-                
+                {lang === "fa"
+                  ? "بیماری یا اختلال دیگری دارد؟"
+                  : "Does he/she have another disease or disorder?"}
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
               <form onChange={this.handelChange.bind(this)}>
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="autism-question-3-yes"
                   name="autism-question-3"
                   value="yes"
                   onClick={this.show_extra.bind(this)}
                 />
-                <label for="autism-question-3-yes">{lang==="fa" ? "بله" : "Yes"}</label>
+                <label for="autism-question-3-yes">
+                  {lang === "fa" ? "بله" : "Yes"}
+                </label>
                 <br />
                 <input
-                  type="radio" 
+                  type="radio"
                   className="big-button"
                   id="autism-question-3-no"
                   name="autism-question-3"
                   value="no"
                 />
-                <label for="autism-question-3-no">{lang==="fa" ? "خیر" : "No"}</label>
+                <label for="autism-question-3-no">
+                  {lang === "fa" ? "خیر" : "No"}
+                </label>
                 <br />
               </form>
             </div>
@@ -471,7 +528,9 @@ class QuestionsP3 extends React.Component {
           <div id="autism-question-4" className="hidden">
             <div className={"question-title autism-questions-title " + lang}>
               <p>
-                {lang === "fa" ? "کدامیک از بیماری های رو به رو ؟" : "Which diseases do you face?"}
+                {lang === "fa"
+                  ? "کدامیک از بیماری های رو به رو ؟"
+                  : "Which diseases do you face?"}
               </p>
             </div>
             <div className={"question-answer autism-questions-answer " + lang}>
@@ -485,7 +544,6 @@ class QuestionsP3 extends React.Component {
                 />
                 <label for="autism-question-4-ADHD">
                   {lang === "fa" ? "بیش فعالی" : "ADHD"}
-                  
                 </label>
                 <br />
                 <input
@@ -507,8 +565,9 @@ class QuestionsP3 extends React.Component {
                   value="Growthdisorder"
                 />
                 <label for="autism-question-4-Growthdisorder">
-                  {lang === "fa" ? "اختلال رشد(مغزی)" : "Growth disorder (brain)"}
-                  
+                  {lang === "fa"
+                    ? "اختلال رشد(مغزی)"
+                    : "Growth disorder (brain)"}
                 </label>
                 <br />
                 <input
@@ -521,7 +580,6 @@ class QuestionsP3 extends React.Component {
                 />
                 <label for="autism-question-4-other">
                   {lang === "fa" ? "سایر" : "Other"}
-                  
                 </label>
                 <br />
                 <textarea

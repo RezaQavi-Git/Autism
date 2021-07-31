@@ -11,8 +11,7 @@ import Footer from "../../footer/Footer";
 
 import { Link } from "react-router-dom";
 
-import Cookies from 'universal-cookie';
-
+import Cookies from "universal-cookie";
 
 class Record extends React.Component {
   constructor(props) {
@@ -21,25 +20,30 @@ class Record extends React.Component {
   }
 
   componentDidMount() {
-
-    const {lang, match: {params}} = this.props;
+    const {
+      lang,
+      match: { params },
+    } = this.props;
     const title = lang === "fa" ? "ضبط صدا" : "Record Voice";
     const dir = lang === "fa" ? "rtl" : "ltr";
 
-    document.title =  title ;
-    $("body").attr("dir",  dir );
+    document.title = title;
+    $("body").attr("dir", dir);
   }
 
   render() {
-    const {lang, match: {params}} = this.props;
-    
+    const {
+      lang,
+      match: { params },
+    } = this.props;
+
     return (
       <React.Fragment>
-        <Language lang={lang} url={"/record/" + lang } />
+        <Language lang={lang} url={"/record/" + lang} />
         <div className="main">
           <Header lang={lang} />
           <p className="seprator"></p>
-          <RecordBody lang={lang}/>
+          <RecordBody lang={lang} />
           <p className="seprator"></p>
           <Link to={"/profile/" + lang}>
             <button id="record-accepted" className="voice-accept">
@@ -151,7 +155,7 @@ class RecordBox extends React.Component {
     document.getElementById("record-accepted").style.display = "flex";
 
     const cookies = new Cookies();
-    cookies.set("voice", this.state.blobURL, { path: '/record' });
+    cookies.set("voice", this.state.blobURL, { path: "/record" });
     console.log(cookies.get("voice"));
   }
 
@@ -173,7 +177,6 @@ class RecordBox extends React.Component {
 
   render() {
     const lang = this.props.lang;
-
 
     return (
       <div className="record">
@@ -205,8 +208,10 @@ class RecordBox extends React.Component {
             className={this.state.recorded ? "submit-voice" : "hidden"}
           >
             <p className="notife ">
-            {lang === "fa" ? "آیا صدای ضبط شده مورد تایید شماست؟" : "Do you approve of the recorded sound ? "}
-              </p>
+              {lang === "fa"
+                ? "آیا صدای ضبط شده مورد تایید شماست؟"
+                : "Do you approve of the recorded sound ? "}
+            </p>
             <div className="submit-voice-buttons">
               <button
                 className="submit button"

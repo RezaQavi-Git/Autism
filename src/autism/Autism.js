@@ -1,11 +1,11 @@
 import React from "react";
 
-import Language from "./components/common/header/Language";
-import Header from "./components/common/header/Header";
-import Footer from "./components/common/footer/Footer";
-import MainPage from "./components/common/autism/mainpage/MainPage";
+import Language from "../components/common/header/Language";
+import Header from "../components/common/header/Header";
+import Footer from "../components/common/footer/Footer";
+import MainPage from "../components/common/autism/mainpage/MainPage";
 
-import $ from 'jquery';
+import $ from "jquery";
 
 class Autism extends React.Component {
   constructor(props) {
@@ -25,13 +25,15 @@ class Autism extends React.Component {
 
   render() {
     const { lang, params } = this.props;
-    
+
     return (
       <React.Fragment>
         <Language lang={lang} url="/fa" />
         <div className="main">
           <Header lang={lang} />
-          <p className="seprator">{lang==="fa" ? "توضیحات" : "Description" } </p>
+          <p className="seprator">
+            {lang === "fa" ? "توضیحات" : "Description"}{" "}
+          </p>
           <MainPage lang={lang} />
           <p className="seprator"></p>
           <Footer lang={lang} />
