@@ -72,8 +72,14 @@ class QuestionsP1 extends React.Component {
     const months = [];
     const days = [];
     var i;
-    for (i = 1390; i < 1430; i++) {
-      years.push(<option value={i}>{i}</option>);
+    if(lang==="fa") {
+      for (i = 1390; i < 1430; i++) {
+        years.push(<option value={i}>{i}</option>);
+      }
+    } else {
+      for (i = 2010; i < 2050; i++) {
+        years.push(<option value={i}>{i}</option>);
+      }
     }
     for (i = 0; i < 12; i++) {
       months.push(<option value={i}>{i}</option>);
