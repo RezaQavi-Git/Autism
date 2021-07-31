@@ -11,6 +11,9 @@ import Footer from "../../footer/Footer";
 
 import { Link } from "react-router-dom";
 
+import Cookies from 'universal-cookie';
+
+
 class Record extends React.Component {
   constructor(props) {
     super(props);
@@ -93,7 +96,9 @@ class RecordBox extends React.Component {
       blobURL: "",
       isBlocked: false,
     };
-    this.Interval = null;
+    // this.Interval = null;
+
+    // this.onStop = this.onStop.bind(this);
   }
 
   // timer() {
@@ -144,6 +149,10 @@ class RecordBox extends React.Component {
 
   showAcceptButtun() {
     document.getElementById("record-accepted").style.display = "flex";
+
+    const cookies = new Cookies();
+    cookies.set("voice", this.state.blobURL, { path: '/record' });
+    console.log(cookies.get("voice"));
   }
 
   cancelVoice() {
@@ -156,9 +165,7 @@ class RecordBox extends React.Component {
   }
 
   onStop(recordedBlob) {
-    console.log("recordedBlob is: ", recordedBlob);
-
-    console.log("recordedBlob is: ", typeof recordedBlob.blobURL);
+    // console.log("recordedBlob is: ", recordedBlob);
     this.setState({
       blobURL: recordedBlob.blobURL,
     });
