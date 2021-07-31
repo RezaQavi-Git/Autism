@@ -17,9 +17,13 @@
   border-bottom: 1px black solid;
 }
 
+.fa {
+  text-align: right;
+
+}
+
 .en {
   text-align: left;
-  /* direction: ltr; */
 }
 
 .hidden {

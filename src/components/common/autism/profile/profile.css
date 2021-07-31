@@ -14,7 +14,7 @@
 
 
 .questions-body {
-  width: 70%;
+  width: 80%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -170,13 +170,6 @@
     width: fit-content;
     border-radius: 5px;
     font-size: 1em;
-  }
-
-  .gender {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
   }
 
   .birthday {

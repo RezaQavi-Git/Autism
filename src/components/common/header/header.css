@@ -2,6 +2,16 @@
   font-family: Vazir;
 }
 
+
+.fa {
+  text-align: right;
+
+}
+
+.en {
+  text-align: left;
+}
+
 .logo {
   width: 50%;
   left: 0;
@@ -38,6 +48,7 @@
   top: 8px;
   right: 5%;
   font-size: 1.25em;
+  border: none;
 }
 
 .lang-button-en {
@@ -45,14 +56,13 @@
   top: 8px;
   left: 5%;
   font-size: 1.25em;
+  border: none;
 }
 
 .lang-img {
-  width: 40px;
+  width: 35px;
   height: 25px;
   border-radius: 5px;
-  margin-left: 1%;
-
 }
 
 @media screen and (max-width: 800px) {
@@ -69,5 +79,15 @@
   .logo-img {
     width: 25%;
     height: inherit;
+  }
+
+  .logo-title-txt {
+    font-size: 0.7em;
+  }
+
+  .lang-img {
+    width: 30px;
+    height: 20px;
+    border-radius: 5px;
   }
 }

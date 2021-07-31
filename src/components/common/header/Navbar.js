@@ -28,45 +28,24 @@ class Navbar extends React.Component {
   render() {
     const lang = this.props.lang;
 
-    if (lang === "fa") {
-      return (
-        <div className="navbar-container">
-          <div id="small-navbar" className={"small-navbar"}>
-            <button
-              className="small-navbar-button"
-              onClick={
-                this.state.small_window
-                  ? this.hide_vertical_navbar.bind(this)
-                  : this.show_vertical_navbar.bind(this)
-              }
-            >
-              منو
-            </button>
-          </div>
-          <HorizontalNavbar lang="fa" />
-          <VerticalNavbar id="vertical-navbar" lang="fa" />
+    return (
+      <div className="navbar-container">
+        <div id="small-navbar" className={"small-navbar"}>
+          <button
+            className="small-navbar-button"
+            onClick={
+              this.state.small_window
+                ? this.hide_vertical_navbar.bind(this)
+                : this.show_vertical_navbar.bind(this)
+            }
+          >
+            {lang === "fa" ? "منو" : "Menu"}
+          </button>
         </div>
-      );
-    } else {
-      return (
-        <div className="navbar-container">
-          <div id="small-navbar" className={"small-navbar"}>
-            <button
-              className="small-navbar-button"
-              onClick={
-                this.state.small_window
-                  ? this.hide_vertical_navbar.bind(this)
-                  : this.show_vertical_navbar.bind(this)
-              }
-            >
-              Menu
-            </button>
-          </div>
-          <HorizontalNavbar lang="en" />
-          <VerticalNavbar id="vertical-navbar" lang="en" />
-        </div>
-      );
-    }
+        <HorizontalNavbar lang={lang} />
+        <VerticalNavbar id="vertical-navbar" lang={lang} />
+      </div>
+    );
   }
 }
 
@@ -80,42 +59,26 @@ class VerticalNavbar extends React.Component {
 
   render() {
     const lang = this.props.lang;
-
-    if (lang === "fa") {
-      return (
-        <div id="vertical-navbar" className={"vertical-navbar"}>
-          <Link to="/fa">خانه</Link>
-          <Link to="/about/fa">درباره ی ما</Link>
-          {/* <div class="dropdown">
-            <div>
-              <button class="dropbtn">تیم ها</button>
-            </div>
-            <div class="dropdown-content">
-              <a href="/">تیم اول 1</a>
-              <a href="/">تیم اونها 2</a>
-              <a href="/">تیم بچه ها 3</a>
-            </div>
-          </div> */}
+    return (
+      <div id="vertical-navbar" className={"vertical-navbar " + lang}>
+        <a href="/">{lang === "fa" ? "خانه" : "Home"}</a>
+        <a href="/">{lang === "fa" ? "طراحی" : "Design"}</a>
+        <a href="/">{lang === "fa" ? "منابع" : "Resources"}</a>
+        <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
+        <div class={"dropdown-" + lang}>
+          <div>
+            <button class={"dropbtn-" +lang }>
+              {lang === "fa" ? "تیم ها" : "Teams"}
+            </button>
+          </div>
+          <div class={"dropdown-" + lang + "-content"}>
+            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
+            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
+            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
+          </div>
         </div>
-      );
-    } else {
-      return (
-        <div id="vertical-navbar" className={"vertical-navbar-en"}>
-          <Link to="/en">Home</Link>
-          <Link to="/about/en">About</Link>
-          {/* <div class="dropdown-en">
-            <div>
-              <button class="dropbtn-en">Teams</button>
-            </div>
-            <div class="dropdown-content-en">
-              <a href="/">First team 1</a>
-              <a href="/">Second Team 2</a>
-              <a href="/">Third Team 3</a>
-            </div>
-          </div> */}
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
@@ -130,41 +93,26 @@ class HorizontalNavbar extends React.Component {
   render() {
     const lang = this.props.lang;
 
-    if (lang === "fa") {
-      return (
-        <div id="horizontal-navbar" className={"horizontal-navbar"}>
-          <Link to="/fa">خانه</Link>
-          <Link to="/about/fa">درباره ی ما</Link>
-          {/* <div class="dropdown">
-            <div>
-              <button class="dropbtn">تیم ها</button>
-            </div>
-            <div class="dropdown-content">
-              <a href="/">تیم اول 1</a>
-              <a href="/">تیم اونها 2</a>
-              <a href="/">تیم بچه ها 3</a>
-            </div>
-          </div> */}
+    return (
+      <div id="horizontal-navbar" className={"horizontal-navbar-" + lang}>
+        <a href="/">{lang === "fa" ? "خانه" : "Home"}</a>
+        <a href="/">{lang === "fa" ? "طراحی" : "Design"}</a>
+        <a href="/">{lang === "fa" ? "منابع" : "Resources"}</a>
+        <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
+        <div class={"dropdown-" + lang}>
+          <div>
+            <button class={"dropbtn-" +lang } >
+              {lang === "fa" ? "تیم ها" : "Teams"}
+            </button>
+          </div>
+          <div class={"dropdown-" + lang + "-content"}>
+            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
+            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
+            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
+          </div>
         </div>
-      );
-    } else {
-      return (
-        <div id="horizontal-navbar" className={"horizontal-navbar-en"}>
-          <Link to="/en">Home</Link>
-          <Link to="/about/en">About</Link>
-          {/* <div class="dropdown-en">
-            <div>
-              <button class="dropbtn-en">Teams</button>
-            </div>
-            <div class="dropdown-content-en">
-              <a href="/">First team 1</a>
-              <a href="/">Second Team 2</a>
-              <a href="/">Third Team 3</a>
-            </div>
-          </div> */}
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
 
