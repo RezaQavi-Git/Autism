@@ -17,7 +17,7 @@ class Header extends React.Component {
     if (lang === "en") {
       return (
         <div className="lang-button-en">
-          <a href={url === "/en" ? "/" : "/about/"}>
+          <a href={url === "/en" ? "/fa" : (url==="/profile/en") ? "/profile/fa" : (url==="/record/en") ? "/record/fa" : "/about/fa"}>
             <img src={fa_img} alt="presian-lang" className="lang-img" />
           </a>
         </div>
@@ -25,7 +25,7 @@ class Header extends React.Component {
     } else {
       return (
         <div className="lang-button">
-          <a href={url === "/fa" ? "/en" : "/about/en"}>
+          <a href={url === "/fa" ? "/en" : (url==="/profile/fa") ? "/profile/en" :  (url==="/record/fa") ? "/record/en" : "/about/en"}>
             <img src={en_img} alt="english-lang" className="lang-img" />
           </a>
         </div>
