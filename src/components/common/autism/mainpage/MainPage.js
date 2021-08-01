@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./main-page.css";
 
+import AUTISMPIC from "../../../static/images/autism.png";
+
 class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -20,12 +22,17 @@ class MainPage extends React.Component {
             : "Some people with autism have other comorbid problems, including mental retardation, sensory integration disorder, attention deficit hyperactivity disorder, epilepsy, and digestive problems; Which means that these people need different levels of support!"}
         </p>
         <div className="main-parts">
-          <Link to={"/profile/" + lang} className="profile link">
-            {lang === "fa" ? "پروفایل" : "Profile"}
-          </Link>
-          <Link to={"/record/" + lang} className="record-link link">
-            {lang === "fa" ? "ضبط صدا" : "Record"}
-          </Link>
+          <div className="main-part-pic">
+            <img src={AUTISMPIC} alt="a boy with autism sit on bench" />
+          </div>
+          <div className="main-part-links">
+            <Link to={"/profile/" + lang} className="profile link">
+              {lang === "fa" ? "پروفایل" : "Profile"}
+            </Link>
+            <Link to={"/record/" + lang} className="record-link link">
+              {lang === "fa" ? "ضبط صدا" : "Record"}
+            </Link>
+          </div>
         </div>
       </React.Fragment>
     );
