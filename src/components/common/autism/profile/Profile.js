@@ -111,7 +111,7 @@ class QuestionsP1 extends React.Component {
             >
               <p>{lang === "fa" ? "جنسیت" : "Gender"}</p>
             </div>
-            <div className="question-answer gender">
+            <div className={"question-answer gender " + lang}>
               <form onChange={this.handelChange.bind(this)}>
                 <input
                   type="radio"
