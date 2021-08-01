@@ -23,8 +23,7 @@
   margin: auto;
 }
 
-
-.main-part-pic img{
+.main-part-pic img {
   width: 100%;
   margin: auto;
   border-radius: 15px;
@@ -37,7 +36,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .profile {
   background-color: var(--light-blue);
@@ -55,21 +53,8 @@
 }
 
 .record-link {
-  background-color:var(--green);
+  background-color: var(--green);
 }
-
-/* @media screen and (max-width: 1000px) {
-  .link {
-    width: 60%;
-    margin: auto;
-    padding: 10px 0px;
-    margin: 10px 0;
-    border-radius: 10px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--white);
-  }
-} */
 
 @media screen and (max-width: 600px) {
   .descrption {
@@ -89,11 +74,10 @@
     font-size: 1.2em;
   }
 
-
   .main-part-pic {
     display: none;
   }
-  
+
   .main-part-links {
     width: 80%;
     margin: auto;
@@ -113,5 +97,4 @@
     text-decoration: none;
     color: var(--white);
   }
-
 }

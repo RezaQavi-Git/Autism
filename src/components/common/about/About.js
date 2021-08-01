@@ -2,7 +2,7 @@ import React from "react";
 
 import "./about.css";
 
-import $ from 'jquery'
+import $ from "jquery";
 
 import Language from "../header/Language";
 import Header from "../header/Header";

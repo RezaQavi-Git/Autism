@@ -1,18 +1,14 @@
 .description {
-    width: 70%;
-    margin: auto;
-    align-items: center;
-    margin-top: 3%;
-    text-align: center;
+  width: 70%;
+  margin: auto;
+  align-items: center;
+  margin-top: 3%;
+  text-align: center;
 }
 
-
-
 @media screen and (max-width: 600px) {
-
-    .description {
-        width: 90%;
-        margin: auto;
-    }
-    
+  .description {
+    width: 90%;
+    margin: auto;
+  }
 }
