@@ -52,15 +52,6 @@
   margin: auto;
   background-color: teal;
 }
-/* 
-.control-button {
-  width: 70%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-} */
 
 .record-voice {
   width: 80%;
@@ -76,15 +67,6 @@
   width: 70px;
   border-radius: 50%;
 }
-
-/* .timer {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  font-size: 2em;
-  padding-top: 5%;
-  color: rgb(7, 156, 255);
-} */
 
 .submit-voice {
   width: 90%;
@@ -137,7 +119,7 @@
   border: none;
   margin: auto;
   font-size: 1.5rem;
-  background-color: var(--green);
+  background-color: var(--light-green);
   color: white;
   border-radius: 5px;
 }
