@@ -114,14 +114,63 @@
   background-color: var(--red);
 }
 
-.voice-accept {
-  width: fit-content;
-  border: none;
+.questions-body-cry {
+  width: 80%;
   margin: auto;
-  font-size: 1.5rem;
-  background-color: var(--light-green);
-  color: white;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-blue-duble);
   border-radius: 5px;
+  font-size: 1.2em;
+  color: var(--dark-blue);
+}
+
+.question-cry {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1% 0;
+  text-align: center;
+  font-size: 1.2em;
+  border: 1px black double;
+  border-radius: 5px;
+  margin-top: 5%;
+}
+
+.question-title-cry {
+  width: 40%;
+  margin: auto;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.question-answer-cry {
+  width: 60%;
+  margin: auto;
+  font-size: 0.95em;
+}
+
+.cry-reason-title {
+  width: 30%;
+  margin: auto;
+}
+
+.cry-reason-answer-options {
+  width: 80%;
+  margin: auto;
+}
+
+.cry-reason-answer {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px) {
@@ -140,7 +189,7 @@
   }
 
   .title-description {
-    width: 60%;
+    width: 80%;
     font-size: 1.1em;
     margin: auto;
   }
@@ -149,38 +198,7 @@
     width: 100%;
     margin: auto;
   }
-
-  .questions {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1em;
-  }
-
-  .question-options {
-    width: 90%;
-    margin: auto;
-    padding-right: 10%;
-    padding-left: 10%;
-  }
-
-  .question-title {
-    text-align: center;
-  }
-
-  .hints {
-    width: 90%;
-    margin: auto;
-  }
-
-  .health-tips {
-    color: var(--red);
-    list-style-type: none;
-  }
-
+  /* 
   .accept-button {
     width: 20%;
     margin: auto;
@@ -188,7 +206,7 @@
     color: white;
     font-size: 1.2em;
     margin-bottom: 5%;
-  }
+  } */
 
   .recorder {
     justify-content: center;
@@ -236,9 +254,48 @@
     width: 90%;
     margin: auto;
   }
+
+  .questions-body-cry {
+    width: 95%;
+    margin: auto;
+  }
+
+  .question-cry {
+    width: 95%;
+    margin: auto;
+    margin: 2% 0%;
+
+    font-size: 1em;
+  }
+
+  .question-title-cry {
+    width: 30%;
+    margin: auto;
+  }
+
+  .question-answer-cry {
+    width: 55%;
+    margin: auto;
+    font-size: 0.95em;
+  }
+  .cry-reason-title {
+    width: 30%;
+    margin: auto;
+  }
+
+  .cry-reason-answer {
+    width: 80%;
+    margin: auto;
+    font-size: 0.9em;
+  }
+
+  .cry-reason-answer-options {
+    width: 90%;
+    margin: auto;
+  }
 }
 
-@media screen and (max-width: 410px) {
+/* @media screen and (max-width: 410px) {
   .title-description {
     width: 80%;
     font-size: 1em;
@@ -272,4 +329,4 @@
   .submit-voice * {
     margin-top: 2%;
   }
-}
+} */

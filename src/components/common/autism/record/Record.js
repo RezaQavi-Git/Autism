@@ -45,11 +45,7 @@ class Record extends React.Component {
           <p className="seprator"></p>
           <RecordBody lang={lang} />
           <p className="seprator"></p>
-          <Link to={"/profile/" + lang}>
-            <button id="record-accepted" className="voice-accept">
-              {lang === "fa" ? "قبول و ادامه" : "Accept & Continue"}
-            </button>
-          </Link>
+          <CryReason id="cry-reason" lang={lang} />
           <p className="seprator"></p>
           <Footer lang={lang} />
         </div>
@@ -100,39 +96,7 @@ class RecordBox extends React.Component {
       blobURL: "",
       isBlocked: false,
     };
-    // this.Interval = null;
-
-    // this.onStop = this.onStop.bind(this);
   }
-
-  // timer() {
-  //   var seconds = 0;
-  //   var tens = 0;
-  //   var appendTens = document.getElementById("tens");
-  //   var appendSeconds = document.getElementById("seconds");
-  //   clearInterval(this.Interval);
-  //   this.Interval = setInterval(startTimer, 10);
-  //   function startTimer() {
-  //     tens++;
-  //     if (tens <= 9) {
-  //       appendTens.innerHTML = "0" + tens;
-  //     }
-  //     if (tens > 9) {
-  //       appendTens.innerHTML = tens;
-  //     }
-  //     if (tens > 99) {
-  //       console.log("seconds");
-  //       seconds++;
-  //       appendSeconds.innerHTML = "0" + seconds;
-  //       tens = 0;
-  //       appendTens.innerHTML = "0" + 0;
-  //     }
-
-  //     if (seconds > 9) {
-  //       appendSeconds.innerHTML = seconds;
-  //     }
-  //   }
-  // }
 
   start = () => {
     this.setState({
@@ -152,7 +116,7 @@ class RecordBox extends React.Component {
   };
 
   showAcceptButtun() {
-    document.getElementById("record-accepted").style.display = "flex";
+    document.getElementById("cry-question-body").style.display = "flex";
 
     const cookies = new Cookies();
     cookies.set("voice", this.state.blobURL, { path: "/record" });
@@ -160,6 +124,8 @@ class RecordBox extends React.Component {
   }
 
   cancelVoice() {
+    document.getElementById("cry-question-body").style.display = "none";
+
     this.setState({
       status: true,
       recorded: false,
@@ -230,50 +196,177 @@ class RecordBox extends React.Component {
           <br />
         </div>
       </div>
-      // <div className="record">
-      //   <div className="recorder">
-      //     <div className="control-button">
-      //       <div className="record-voice">
-      //         <img
-      //           src={Microphone}
-      //           alt="mirophone"
-      //           onClick={this.state.status ? this.start : this.stop}
-      //           className="record-button"
-      //         ></img>
-      //         <p
-      //           className={
-      //             this.state.isRecording | this.state.recorded
-      //               ? "timer"
-      //               : "hidden"
-      //           }
-      //         >
-      //           <span id="seconds">00</span>:<span id="tens">00</span>
-      //         </p>
-      //       </div>
-      //       <div
-      //         id="submit"
-      //         className={this.state.recorded ? "submit-voice" : "hidden"}
-      //       >
-      //         <p className="notife">آیا صدای ضبط شده مورد تایید شماست؟</p>
-      //         <div className="submit-voice-buttons">
-      //           <button
-      //             className="submit button"
-      //             onClick={this.showAcceptButtun.bind(this)}
-      //           >
-      //             بله
-      //           </button>
-      //           <button
-      //             className="cancel button"
-      //             onClick={this.cancelVoice.bind(this)}
-      //           >
-      //             انصراف
-      //           </button>
-      //         </div>
-      //       </div>
-      //     </div>
-      //     <br />
-      //   </div>
-      // </div>
+    );
+  }
+}
+
+class CryReason extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  handelChange(event) {
+    const cookies = new Cookies();
+    cookies.set(event.target.name, event.target.value, { path: "/profile" });
+    console.log(cookies.get(event.target.name));
+  }
+
+  render() {
+    const lang = this.props.lang;
+
+    return (
+      <React.Fragment>
+        <div id="cry-question-body" className="questions-body-cry">
+          <div id="cry-reason" className="question-cry">
+            <div className="question-title-cry cry-reason-title">
+              <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
+            </div>
+            <div className={"question-answer-cry cry-reason-answer " + lang}>
+              <form
+                className={"cry-reason-answer-options " + lang}
+                onChange={this.handelChange.bind(this)}
+              >
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option1"
+                  name="cry-reson"
+                  value="Hunger"
+                />
+                <label for="option1">
+                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option2"
+                  name="cry-reson"
+                  value="Thirst"
+                />
+                <label for="option2">
+                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option3"
+                  name="cry-reson"
+                  value="lackofsleep"
+                />
+                <label for="option3">
+                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option4"
+                  name="cry-reson"
+                  value="pain"
+                />
+                <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option5"
+                  name="cry-reson"
+                  value="dirty"
+                />
+                <label for="option5">
+                  {lang === "fa" ? "کثیف بودن" : "Being dirty"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option6"
+                  name="cry-reson"
+                  value="excuse"
+                />
+                <label for="option6">
+                  {lang === "fa" ? "بهانه گیری" : "Excuse-making"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option7"
+                  name="cry-reson"
+                  value="notcooperate"
+                />
+                <label for="option7">
+                  {lang === "fa"
+                    ? "همکاری نکردن با بزرگتر"
+                    : "Not cooperating with adults"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option8"
+                  name="cry-reson"
+                  value="vaccine"
+                />
+                <label for="option8">
+                  {lang === "fa" ? "درد واکسن" : "Vaccine pain"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option9"
+                  name="cry-reson"
+                  value="sepration"
+                />
+                <label for="option9">
+                  {lang === "fa" ? "جدایی از مادر" : "Separation from mother"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option10"
+                  name="cry-reson"
+                  value="fear"
+                />
+                <label for="option10">{lang === "fa" ? "ترس" : "Fear"}</label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option11"
+                  name="cry-reson"
+                  value="dontknow"
+                />
+                <label for="option11">
+                  {lang === "fa" ? "نمیدانم" : "I do not know"}
+                </label>
+                <br />
+                <input
+                  type="radio"
+                  className="big-button"
+                  id="option12"
+                  name="cry-reson"
+                  value="noanswer"
+                />
+                <label for="option12">
+                  {lang === "fa" ? "پاسخ نمیدهم" : "I do not answer"}
+                </label>
+                <br />
+              </form>
+            </div>
+          </div>
+          <Link to={"/" + lang}>
+            <button className="next-button">
+              {lang === "fa" ? "تایید" : "Accept"}
+            </button>
+          </Link>
+        </div>
+      </React.Fragment>
     );
   }
 }
