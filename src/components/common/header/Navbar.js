@@ -39,7 +39,7 @@ class Navbar extends React.Component {
                 : this.show_vertical_navbar.bind(this)
             }
           >
-            {lang === "fa" ? "منو" : "Menu"}
+            <span>&#9776; {lang === "fa" ? "منو" : "Menu"}</span>
           </button>
         </div>
         <HorizontalNavbar lang={lang} />
@@ -61,10 +61,10 @@ class VerticalNavbar extends React.Component {
     const lang = this.props.lang;
     return (
       <div id="vertical-navbar" className={"vertical-navbar " + lang}>
-        <a href="/">{lang === "fa" ? "خانه" : "Home"}</a>
-        <a href="/">{lang === "fa" ? "طراحی" : "Design"}</a>
-        <a href="/">{lang === "fa" ? "منابع" : "Resources"}</a>
-        <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
+        <a href={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</a>
+        <a href={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</a>
+        <a href={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</a>
+        {/* <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
         <div class={"dropdown-" + lang}>
           <div>
             <button class={"dropbtn-" + lang}>
@@ -76,7 +76,7 @@ class VerticalNavbar extends React.Component {
             <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
             <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
@@ -95,10 +95,10 @@ class HorizontalNavbar extends React.Component {
 
     return (
       <div id="horizontal-navbar" className={"horizontal-navbar-" + lang}>
-        <a href="/">{lang === "fa" ? "خانه" : "Home"}</a>
-        <a href="/">{lang === "fa" ? "طراحی" : "Design"}</a>
-        <a href="/">{lang === "fa" ? "منابع" : "Resources"}</a>
-        <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
+        <a href={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</a>
+        <a href={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</a>
+        <a href={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</a>
+        {/* <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
         <div class={"dropdown-" + lang}>
           <div>
             <button class={"dropbtn-" + lang}>
@@ -110,7 +110,7 @@ class HorizontalNavbar extends React.Component {
             <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
             <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
