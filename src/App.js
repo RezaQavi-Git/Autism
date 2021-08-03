@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
@@ -14,7 +14,7 @@ import Profile from "./components/common/autism/profile/Profile";
 class App extends React.Component {
   render() {
     return (
-      <Router>
+      <Router >
         <Switch>
           <Route
             exact="true"
