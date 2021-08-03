@@ -4,6 +4,7 @@ import "../total-page.css";
 
 import fa_img from "../../static/images/fa-lang.png";
 import en_img from "../../static/images/en-lang.png";
+import { Link } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,8 +18,8 @@ class Header extends React.Component {
     if (lang === "en") {
       return (
         <div className="lang-button-en">
-          <a
-            href={
+          <Link
+            to={
               url === "/en"
                 ? "/fa"
                 : url === "/profile/en"
@@ -29,14 +30,14 @@ class Header extends React.Component {
             }
           >
             <img src={fa_img} alt="presian-lang" className="lang-img" />
-          </a>
+          </Link>
         </div>
       );
     } else {
       return (
         <div className="lang-button">
-          <a
-            href={
+          <Link
+            to={
               url === "/fa"
                 ? "/en"
                 : url === "/profile/fa"
@@ -47,7 +48,7 @@ class Header extends React.Component {
             }
           >
             <img src={en_img} alt="english-lang" className="lang-img" />
-          </a>
+          </Link>
         </div>
       );
     }

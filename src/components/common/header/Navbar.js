@@ -61,9 +61,9 @@ class VerticalNavbar extends React.Component {
     const lang = this.props.lang;
     return (
       <div id="vertical-navbar" className={"vertical-navbar " + lang}>
-        <a href={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</a>
-        <a href={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</a>
-        <a href={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</a>
+        <Link to={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</Link>
+        <Link to={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</Link>
+        <Link to={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
         {/* <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
         <div class={"dropdown-" + lang}>
           <div>
@@ -95,9 +95,9 @@ class HorizontalNavbar extends React.Component {
 
     return (
       <div id="horizontal-navbar" className={"horizontal-navbar-" + lang}>
-        <a href={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</a>
-        <a href={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</a>
-        <a href={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</a>
+        <Link to={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</Link>
+        <Link to={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</Link>
+        <Link to={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
         {/* <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
         <div class={"dropdown-" + lang}>
           <div>

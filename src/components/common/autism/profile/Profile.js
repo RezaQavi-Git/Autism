@@ -36,7 +36,7 @@ class Profile extends React.Component {
 
     return (
       <React.Fragment>
-        <Language lang={lang} url={"/profile/" + lang} />
+        <Language lang={lang} url={"/autism/profile/" + lang} />
         <div className="main">
           <Header lang={lang} />
           <p id="section1" className="seprator">
@@ -46,11 +46,11 @@ class Profile extends React.Component {
           <p id="section2" className="seprator">
             {lang === "fa" ? "بخش دوم" : "Part Two"}
           </p>
-          <QuestionsP2 lang={lang} />
+          {/* <QuestionsP2 lang={lang} />
           <p id="section3" className="seprator">
             {lang === "fa" ? "بخش سوم" : "Part Three"}
-          </p>
-          <QuestionsP3 lang={lang} />
+          </p> */}
+          <QuestionsP2 lang={lang} />
           <p className="seprator"></p>
           <Link to={"/" + lang}>
             <button className="accept">
@@ -205,178 +205,178 @@ class QuestionsP1 extends React.Component {
   }
 }
 
+// class QuestionsP2 extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {};
+//   }
+
+//   handelChange(event) {
+//     const cookies = new Cookies();
+//     cookies.set(event.target.name, event.target.value, { path: "/profile" });
+//     console.log(cookies.get(event.target.name));
+//   }
+
+//   render() {
+//     const lang = this.props.lang;
+
+//     return (
+//       <React.Fragment>
+//         <div className="questions-body">
+//           <div id="cry-reason" className="question ">
+//             <div className="question-title cry-reason-title">
+//               <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
+//             </div>
+//             <div className={"question-answer cry-reason-answer " + lang}>
+//               <form
+//                 className={"cry-reason-answer-options " + lang}
+//                 onChange={this.handelChange.bind(this)}
+//               >
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option1"
+//                   name="cry-reson"
+//                   value="Hunger"
+//                 />
+//                 <label for="option1">
+//                   {lang === "fa" ? "گرسنگی" : "Hunger"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option2"
+//                   name="cry-reson"
+//                   value="Thirst"
+//                 />
+//                 <label for="option2">
+//                   {lang === "fa" ? "گرسنگی" : "Hunger"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option3"
+//                   name="cry-reson"
+//                   value="lackofsleep"
+//                 />
+//                 <label for="option3">
+//                   {lang === "fa" ? "گرسنگی" : "Hunger"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option4"
+//                   name="cry-reson"
+//                   value="pain"
+//                 />
+//                 <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option5"
+//                   name="cry-reson"
+//                   value="dirty"
+//                 />
+//                 <label for="option5">
+//                   {lang === "fa" ? "کثیف بودن" : "Being dirty"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option6"
+//                   name="cry-reson"
+//                   value="excuse"
+//                 />
+//                 <label for="option6">
+//                   {lang === "fa" ? "بهانه گیری" : "Excuse-making"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option7"
+//                   name="cry-reson"
+//                   value="notcooperate"
+//                 />
+//                 <label for="option7">
+//                   {lang === "fa"
+//                     ? "همکاری نکردن با بزرگتر"
+//                     : "Not cooperating with adults"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option8"
+//                   name="cry-reson"
+//                   value="vaccine"
+//                 />
+//                 <label for="option8">
+//                   {lang === "fa" ? "درد واکسن" : "Vaccine pain"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option9"
+//                   name="cry-reson"
+//                   value="sepration"
+//                 />
+//                 <label for="option9">
+//                   {lang === "fa" ? "جدایی از مادر" : "Separation from mother"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option10"
+//                   name="cry-reson"
+//                   value="fear"
+//                 />
+//                 <label for="option10">{lang === "fa" ? "ترس" : "Fear"}</label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option11"
+//                   name="cry-reson"
+//                   value="dontknow"
+//                 />
+//                 <label for="option11">
+//                   {lang === "fa" ? "نمیدانم" : "I do not know"}
+//                 </label>
+//                 <br />
+//                 <input
+//                   type="radio"
+//                   className="big-button"
+//                   id="option12"
+//                   name="cry-reson"
+//                   value="noanswer"
+//                 />
+//                 <label for="option12">
+//                   {lang === "fa" ? "پاسخ نمیدهم" : "I do not answer"}
+//                 </label>
+//                 <br />
+//               </form>
+//             </div>
+//           </div>
+//           <a href="#section3">
+//             <button className="next-button">
+//               {lang === "fa" ? "بعدی" : "Next"}
+//             </button>
+//           </a>
+//         </div>
+//       </React.Fragment>
+//     );
+//   }
+// }
+
 class QuestionsP2 extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  handelChange(event) {
-    const cookies = new Cookies();
-    cookies.set(event.target.name, event.target.value, { path: "/profile" });
-    console.log(cookies.get(event.target.name));
-  }
-
-  render() {
-    const lang = this.props.lang;
-
-    return (
-      <React.Fragment>
-        <div className="questions-body">
-          <div id="cry-reason" className="question ">
-            <div className="question-title cry-reason-title">
-              <p>{lang === "fa" ? "دلیل گریه" : "The reason for crying"}</p>
-            </div>
-            <div className={"question-answer cry-reason-answer " + lang}>
-              <form
-                className={"cry-reason-answer-options " + lang}
-                onChange={this.handelChange.bind(this)}
-              >
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option1"
-                  name="cry-reson"
-                  value="Hunger"
-                />
-                <label for="option1">
-                  {lang === "fa" ? "گرسنگی" : "Hunger"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option2"
-                  name="cry-reson"
-                  value="Thirst"
-                />
-                <label for="option2">
-                  {lang === "fa" ? "گرسنگی" : "Hunger"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option3"
-                  name="cry-reson"
-                  value="lackofsleep"
-                />
-                <label for="option3">
-                  {lang === "fa" ? "گرسنگی" : "Hunger"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option4"
-                  name="cry-reson"
-                  value="pain"
-                />
-                <label for="option4">{lang === "fa" ? "درد" : "Pain"}</label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option5"
-                  name="cry-reson"
-                  value="dirty"
-                />
-                <label for="option5">
-                  {lang === "fa" ? "کثیف بودن" : "Being dirty"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option6"
-                  name="cry-reson"
-                  value="excuse"
-                />
-                <label for="option6">
-                  {lang === "fa" ? "بهانه گیری" : "Excuse-making"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option7"
-                  name="cry-reson"
-                  value="notcooperate"
-                />
-                <label for="option7">
-                  {lang === "fa"
-                    ? "همکاری نکردن با بزرگتر"
-                    : "Not cooperating with adults"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option8"
-                  name="cry-reson"
-                  value="vaccine"
-                />
-                <label for="option8">
-                  {lang === "fa" ? "درد واکسن" : "Vaccine pain"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option9"
-                  name="cry-reson"
-                  value="sepration"
-                />
-                <label for="option9">
-                  {lang === "fa" ? "جدایی از مادر" : "Separation from mother"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option10"
-                  name="cry-reson"
-                  value="fear"
-                />
-                <label for="option10">{lang === "fa" ? "ترس" : "Fear"}</label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option11"
-                  name="cry-reson"
-                  value="dontknow"
-                />
-                <label for="option11">
-                  {lang === "fa" ? "نمیدانم" : "I do not know"}
-                </label>
-                <br />
-                <input
-                  type="radio"
-                  className="big-button"
-                  id="option12"
-                  name="cry-reson"
-                  value="noanswer"
-                />
-                <label for="option12">
-                  {lang === "fa" ? "پاسخ نمیدهم" : "I do not answer"}
-                </label>
-                <br />
-              </form>
-            </div>
-          </div>
-          <a href="#section3">
-            <button className="next-button">
-              {lang === "fa" ? "بعدی" : "Next"}
-            </button>
-          </a>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
-
-class QuestionsP3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
