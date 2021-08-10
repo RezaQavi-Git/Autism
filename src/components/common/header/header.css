@@ -11,7 +11,7 @@
 }
 
 .logo {
-  width: 50%;
+  width: 80%;
   left: 0;
   float: left;
   margin: auto;
@@ -23,7 +23,7 @@
 }
 
 .logo-img {
-  width: 20%;
+  width: 10%;
 }
 
 .logo-title {
@@ -75,12 +75,12 @@
   }
 
   .logo-img {
-    width: 25%;
+    width: 15%;
     height: inherit;
   }
 
   .logo-title-txt {
-    font-size: 0.7em;
+    font-size: 0.5em;
   }
 
   .lang-img {

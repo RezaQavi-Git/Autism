@@ -1,14 +1,38 @@
-.description {
+.description-title {
   width: 70%;
   margin: auto;
   align-items: center;
-  margin-top: 3%;
+  text-align: center;
+  font-size: 1.5em;
+  color: var(--dark-blue);
+}
+
+.description {
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  font-size: 0.95em;
+  margin-top: 1%;
   text-align: center;
 }
 
+
 @media screen and (max-width: 600px) {
+  .description-title {
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--dark-blue);
+  }
+  
   .description {
     width: 90%;
     margin: auto;
+    align-items: center;
+    font-size: 0.7em;
+    margin-top: 1%;
+    text-align: center;
   }
 }

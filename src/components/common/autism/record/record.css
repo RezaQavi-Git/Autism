@@ -47,7 +47,7 @@
 }
 
 .record-wave {
-  width: 100%;
+  width: 60%;
   min-height: 150px;
   margin: auto;
   background-color: teal;
@@ -76,7 +76,21 @@
   justify-content: space-between;
 }
 
+.record-player {
+  margin-top: 10px;
+  border-radius: 50px;
+}
+
 .notife {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 1.5em;
+  padding-top: 5%;
+  color: rgb(87, 13, 26);
+}
+
+.timer {
   width: 80%;
   margin: auto;
   text-align: center;
@@ -198,15 +212,6 @@
     width: 100%;
     margin: auto;
   }
-  /* 
-  .accept-button {
-    width: 20%;
-    margin: auto;
-    padding: 0 10px;
-    color: white;
-    font-size: 1.2em;
-    margin-bottom: 5%;
-  } */
 
   .recorder {
     justify-content: center;
@@ -224,15 +229,6 @@
     background-color: rgb(128, 0, 79);
   }
 
-  /* .control-button {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-  } */
-
   .record-voice {
     width: 90%;
     margin: auto;
@@ -240,6 +236,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .record-button {
+    background-color: var(--red);
+    width: 50px;
+    border-radius: 50%;
   }
 
   .notife {
