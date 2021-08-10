@@ -32,7 +32,6 @@ class Autism extends React.Component {
         <div className="main">
           <Header lang={lang} />
           <p className="seprator">
-            {lang === "fa" ? "توضیحات" : "Description"}{" "}
           </p>
           <MainPage lang={lang} />
           <p className="seprator"></p>
