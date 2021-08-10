@@ -86,6 +86,7 @@ class RecordBody extends React.Component {
   }
 }
 
+
 class RecordBox extends React.Component {
   constructor(props) {
     super(props);
@@ -95,29 +96,62 @@ class RecordBox extends React.Component {
       isRecording: false,
       blobURL: "",
       isBlocked: false,
+      timerOn: false,
+      timerStart: 0,
+      timerTime: 0,
     };
   }
 
+  startTimer = () => {
+    this.setState({
+      timerOn: true,
+      timerTime: this.state.timerTime,
+      timerStart: Date.now() - this.state.timerTime,
+    });
+    this.timer = setInterval(() => {
+      this.setState({
+        timerTime: Date.now() - this.state.timerStart,
+      });
+    }, 10);
+  };
+
+  stopTimer = () => {
+    this.setState({ timerOn: false });
+    clearInterval(this.timer);
+  };
+
+  resetTimer = () => {
+    this.setState({
+      timerStart: 0,
+      timerTime: 0,
+    });
+  };
+
   start = () => {
+    this.startTimer();
     this.setState({
       status: false,
       recorded: false,
       record: true,
+      isRecording: true,
     });
   };
 
   stop = () => {
+    this.stopTimer();
     this.setState({
       isRecording: false,
       status: true,
       recorded: true,
       record: false,
+      isRecording: false,
     });
+    this.resetTimer();
+
   };
 
   showAcceptButtun() {
     document.getElementById("cry-question-body").style.display = "flex";
-
     const cookies = new Cookies();
     cookies.set("voice", this.state.blobURL, { path: "/record" });
     console.log(cookies.get("voice"));
@@ -125,7 +159,7 @@ class RecordBox extends React.Component {
 
   cancelVoice() {
     document.getElementById("cry-question-body").style.display = "none";
-
+    this.resetTimer();
     this.setState({
       status: true,
       recorded: false,
@@ -135,7 +169,6 @@ class RecordBox extends React.Component {
   }
 
   onStop(recordedBlob) {
-    // console.log("recordedBlob is: ", recordedBlob);
     this.setState({
       blobURL: recordedBlob.blobURL,
     });
@@ -143,7 +176,9 @@ class RecordBox extends React.Component {
 
   render() {
     const lang = this.props.lang;
-
+    const { timerTime } = this.state;
+    let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
+    let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     return (
       <div className="record">
         <div className="recorder">
@@ -163,11 +198,14 @@ class RecordBox extends React.Component {
               onClick={this.state.status ? this.start : this.stop}
               className="record-button"
             />
-            {/* <audio
-                  src={this.state.blobURL}
-                  controls="controls"
-                  className="record-player"
-                /> */}
+            <div className={ this.state.timerOn | this.state.recorded ? "timer" : "hidden"}>
+              {lang==="fa" ?( seconds + ":" + centiseconds ) : ( seconds + ":" + centiseconds )}
+            </div>
+            <audio
+              src={this.state.blobURL}
+              controls="controls"
+              className={this.state.recorded ? "record-player" : "hidden"}
+            />
           </div>
           <div
             id="submit"
@@ -246,7 +284,7 @@ class CryReason extends React.Component {
                   value="Thirst"
                 />
                 <label for="option2">
-                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                  {lang === "fa" ? "تشنگی" : "Thirst"}
                 </label>
                 <br />
                 <input
@@ -257,7 +295,7 @@ class CryReason extends React.Component {
                   value="lackofsleep"
                 />
                 <label for="option3">
-                  {lang === "fa" ? "گرسنگی" : "Hunger"}
+                  {lang === "fa" ? "کم خوابی یا بی خوابی" : "lackofsleep"}
                 </label>
                 <br />
                 <input
