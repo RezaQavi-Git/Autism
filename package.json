@@ -1,6 +1,6 @@
 {
   "name": "autism",
-  "homepage": "https://covidlab.ut.ac.ir/test/",
+  "homepage": "https://covidlab.ut.ac.ir/autismtest/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
