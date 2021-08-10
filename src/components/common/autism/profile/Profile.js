@@ -194,11 +194,11 @@ class QuestionsP1 extends React.Component {
               />
             </div>
           </div>
-          <a href="#section2">
+          {/* <a href="#section2">
             <button className="next-button">
               {lang === "fa" ? "بعدی" : "Next"}
             </button>
-          </a>
+          </a> */}
         </div>
       </React.Fragment>
     );
