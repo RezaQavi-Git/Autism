@@ -102,6 +102,19 @@ class RecordBox extends React.Component {
     };
   }
 
+  componentDidMount() {
+    navigator.getUserMedia({ audio: true },
+      () => {
+        console.log('Permission Granted');
+        this.setState({ isBlocked: false });
+      },
+      () => {
+        console.log('Permission Denied');
+        this.setState({ isBlocked: true })
+      },
+    );
+  }
+
   startTimer = () => {
     this.setState({
       timerOn: true,
@@ -128,13 +141,17 @@ class RecordBox extends React.Component {
   };
 
   start = () => {
-    this.startTimer();
-    this.setState({
-      status: false,
-      recorded: false,
-      record: true,
-      isRecording: true,
-    });
+    if(this.state.isBlocked) {
+      alert("microphone is blocked!");
+    } else {
+      this.startTimer();
+      this.setState({
+        status: false,
+        recorded: false,
+        record: true,
+        isRecording: true,
+      });
+    }
   };
 
   stop = () => {
