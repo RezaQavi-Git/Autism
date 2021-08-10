@@ -64,19 +64,8 @@ class VerticalNavbar extends React.Component {
         <Link to={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</Link>
         <Link to={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</Link>
         <Link to={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
-        {/* <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
-        <div class={"dropdown-" + lang}>
-          <div>
-            <button class={"dropbtn-" + lang}>
-              {lang === "fa" ? "تیم ها" : "Teams"}
-            </button>
-          </div>
-          <div class={"dropdown-" + lang + "-content"}>
-            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
-            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
-            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
-          </div>
-        </div> */}
+        <Link to={"/about/" + lang}>{lang === "fa" ? "درباره ما" : "About"}</Link>
+
       </div>
     );
   }
@@ -98,19 +87,7 @@ class HorizontalNavbar extends React.Component {
         <Link to={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</Link>
         <Link to={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</Link>
         <Link to={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
-        {/* <a href="/">{lang === "fa" ? "لینک ها" : "Links"}</a>
-        <div class={"dropdown-" + lang}>
-          <div>
-            <button class={"dropbtn-" + lang}>
-              {lang === "fa" ? "تیم ها" : "Teams"}
-            </button>
-          </div>
-          <div class={"dropdown-" + lang + "-content"}>
-            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
-            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
-            <a href="/">{lang === "fa" ? "تیم" : "team"}</a>
-          </div>
-        </div> */}
+        <Link to={"/about/" + lang}>{lang === "fa" ? "درباره ما" : "About"}</Link>
       </div>
     );
   }
