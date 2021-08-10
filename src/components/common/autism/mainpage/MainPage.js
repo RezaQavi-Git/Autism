@@ -18,8 +18,8 @@ class MainPage extends React.Component {
       <React.Fragment>
         <p className="descrption">
           {lang === "fa"
-            ? "بعضی از افراد دارای اتیسم، مشکلات همراه دیگری نیز از جمله کم‌توانی ذهنی، اختلال یکپارچگی حسی، اختلال بیش‌فعالی و نقص توجه، صرع و مشکلات گوارشی دارند؛ که به معنای این است که این افراد نیازمند سطوح حمایتی مختلفی هستند!"
-            : "Some people with autism have other comorbid problems, including mental retardation, sensory integration disorder, attention deficit hyperactivity disorder, epilepsy, and digestive problems; Which means that these people need different levels of support!"}
+            ? "این سامانه جهت غربالگری صوتی کودکان مبتلا به اتیسم راه اندازی شده است. با پر کردن پروفایل و ارسال صدای گریه کودک خود میتوانید کودک خود را غربالگری نمایید."
+            : "This system has been set up for voice screening of children with autism. You can screen your baby by filling out a profile and sending the sound of your baby crying."}
         </p>
         <div className="main-parts">
           <div className="main-part-pic">
