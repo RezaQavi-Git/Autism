@@ -75,7 +75,8 @@
   }
 
   .main-part-pic {
-    display: none;
+    width: 80%;
+    margin: auto;
   }
 
   .main-part-links {
