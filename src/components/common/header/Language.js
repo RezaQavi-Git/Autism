@@ -4,9 +4,8 @@ import "../total-page.css";
 
 import fa_img from "../../static/images/fa-lang.png";
 import en_img from "../../static/images/en-lang.png";
-// import { Link } from "react-router-dom";
 
-class Header extends React.Component {
+class Language extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,20 +14,12 @@ class Header extends React.Component {
   render() {
     const lang = this.props.lang;
     const url = this.props.url;
+    var path = window.location.pathname;
+    path = path.slice(0, path.length - 2);
     if (lang === "en") {
       return (
         <div className="lang-button-en">
-          <a
-            href={
-              url === "/en"
-                ? "/fa"
-                : url === "/profile/en"
-                ? "/profile/fa"
-                : url === "/record/en"
-                ? "/record/fa"
-                : "/about/fa"
-            }
-          >
+          <a href={lang === "fa" ? path + "en" : path + "fa"}>
             <img src={fa_img} alt="presian-lang" className="lang-img" />
           </a>
         </div>
@@ -36,17 +27,7 @@ class Header extends React.Component {
     } else {
       return (
         <div className="lang-button">
-          <a
-            href={
-              url === "/fa"
-                ? "/en"
-                : url === "/profile/fa"
-                ? "/profile/en"
-                : url === "/record/fa"
-                ? "/record/en"
-                : "/about/en"
-            }
-          >
+          <a href={lang === "fa" ? path + "en" : path + "fa"}>
             <img src={en_img} alt="english-lang" className="lang-img" />
           </a>
         </div>
@@ -55,4 +36,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default Language;
