@@ -40,7 +40,7 @@
 
 .horizontal-navbar-fa a {
   float: right;
-  font-size: 1em;
+  font-size: 1.2em;
   color: white;
   /* text-align: left; */
   padding: 16px;
@@ -162,7 +162,7 @@
 
 .horizontal-navbar-en a {
   float: left;
-  font-size: 1em;
+  font-size: 1.2em;
   color: white;
   /* text-align: left; */
   padding: 16px;
