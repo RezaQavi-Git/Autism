@@ -28,11 +28,10 @@ class Autism extends React.Component {
 
     return (
       <React.Fragment>
-        <Language lang={lang} url={"/" + lang }/>
+        <Language lang={lang} url={"/" + lang} />
         <div className="main">
           <Header lang={lang} />
-          <p className="seprator">
-          </p>
+          <p className="seprator"></p>
           <MainPage lang={lang} />
           <p className="seprator"></p>
           <Footer lang={lang} />

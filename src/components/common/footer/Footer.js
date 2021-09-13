@@ -17,37 +17,37 @@ class Footer extends React.Component {
     return (
       <React.Fragment>
         <footer className="footer">
-          <div className="footer-member">
-            <img src={Email} alt="email" className="footer-img" />
-            <p className="footer-detail">
-            moradih@ut.ac.ir
-            </p>
+          <div className="footer-members">
+            <div className="footer-member">
+              <img src={Email} alt="email" className="footer-img" />
+              <p className="footer-detail">moradih@ut.ac.ir</p>
+            </div>
+            <div className="footer-member">
+              <img src={Phone} alt="phone" className="footer-img" />
+              <p className="footer-detail" dir="ltr">
+                {lang === "fa" ? "+98 21 82084960" : "+98 21 82084960"}
+              </p>
+            </div>
+            <div className="footer-member">
+              <img src={Location} alt="location" className="footer-img" />
+              <p className="footer-detail">
+                {lang === "fa"
+                  ? "دانشکده مهندسی برق و کامپیوتر ، دانشکده فنی و مهندسی دانشگاه ، دانشگاه تهران ، خیابان کارگر شمالی ، تهران ، ایران"
+                  : "School of Electrical and Computer Engineering, University College of Engineering, University of Tehran, North Kargar st.Tehran, Iran."}
+              </p>
+            </div>
           </div>
-          <div className="footer-member">
-            <img src={Phone} alt="phone" className="footer-img" />
-            <p className="footer-detail" dir="ltr">
-              {lang === "fa" ? "+98 21 82084960" : "+98 21 82084960"}
-            </p>
-          </div>
-          <div className="footer-member">
-            <img src={Location} alt="location" className="footer-img" />
-            <p className="footer-detail">
-              {lang === "fa"
-                ? "دانشکده مهندسی برق و کامپیوتر ، دانشکده فنی و مهندسی دانشگاه ، دانشگاه تهران ، خیابان کارگر شمالی ، تهران ، ایران"
-                : "School of Electrical and Computer Engineering, University College of Engineering, University of Tehran, North Kargar st.Tehran, Iran."}
-            </p>
-          </div>
+            <div className="footer-copyright">
+              <p>
+                {lang === "fa"
+                  ? " تمامی حقوق سایت متعلق به دانشگاه تهران میباشد . طراحی شده توسط  "
+                  : " All rights reserved to the University of Tehran . Designed by "}
+                <a href="https://github.com/RezaQavi-git">
+                  {lang === "fa" ? "رضا قوی" : "Reza Qavi"}
+                </a>
+              </p>
+            </div>
         </footer>
-        <div className="footer-copyright">
-          <p>
-            {lang === "fa"
-              ? "تمامی حقوق سایت متعلق به شرکت فلان میباشد . طراح "
-              : " All rights of the site belong to a certain company . Designer "}
-            <a href="https://github.com/RezaQavi-git">
-              {lang === "fa" ? "رضا قوی" : "Reza Qavi"}
-            </a>
-          </p>
-        </div>
       </React.Fragment>
     );
   }

@@ -29,7 +29,7 @@ class MainPage extends React.Component {
             <Link to={"/profile/" + lang} className="profile link">
               {lang === "fa" ? "پروفایل" : "Profile"}
             </Link>
-            <Link to={"/record/" + lang} className="record-link link">
+            <Link to={"/cry/record/" + lang} className="record-link link">
               {lang === "fa" ? "ضبط صدا" : "Record"}
             </Link>
           </div>

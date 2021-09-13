@@ -46,15 +46,11 @@ class Profile extends React.Component {
           <p id="section2" className="seprator">
             {lang === "fa" ? "بخش دوم" : "Part Two"}
           </p>
-          {/* <QuestionsP2 lang={lang} />
-          <p id="section3" className="seprator">
-            {lang === "fa" ? "بخش سوم" : "Part Three"}
-          </p> */}
           <QuestionsP2 lang={lang} />
           <p className="seprator"></p>
           <Link to={"/" + lang}>
             <button className="accept">
-              {lang === "fa" ? "ثبت و ادامه" : "Accept & Continue"}
+              {lang === "fa" ? "ثبت" : "Accept"}
             </button>
           </Link>
           <p className="seprator"></p>
