@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
@@ -8,13 +8,14 @@ import "./components/static/Fonts/vazir-fonts/fonts.css";
 import Autism from "./autism/Autism";
 
 import About from "./components/common/about/About";
-import Record from "./components/common/autism/record/Record";
 import Profile from "./components/common/autism/profile/Profile";
+import Record from "./components/common/autism/record/Record";
+
 
 class App extends React.Component {
   render() {
     return (
-      <Router >
+      <Router basename="/autismtest">
         <Switch>
           <Route
             exact="true"
@@ -51,13 +52,13 @@ class App extends React.Component {
           ></Route>
 
           <Route
-            exact="true"
-            path="/record/fa"
+            exact={true}
+            path="/cry/record/fa"
             render={(props) => <Record lang="fa" {...props} />}
           ></Route>
           <Route
-            exact="true"
-            path="/record/en"
+            exact={true}
+            path="/cry/record/en"
             render={(props) => <Record lang="en" {...props} />}
           ></Route>
         </Switch>

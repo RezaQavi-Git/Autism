@@ -63,7 +63,7 @@ class VerticalNavbar extends React.Component {
       <div id="vertical-navbar" className={"vertical-navbar " + lang}>
         <Link to={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</Link>
         <Link to={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</Link>
-        <Link to={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
+        <Link to={"/cry/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
         <Link to={"/about/" + lang}>{lang === "fa" ? "درباره ما" : "About"}</Link>
 
       </div>
@@ -86,7 +86,7 @@ class HorizontalNavbar extends React.Component {
       <div id="horizontal-navbar" className={"horizontal-navbar-" + lang}>
         <Link to={"/" + lang}>{lang === "fa" ? "خانه" : "Home"}</Link>
         <Link to={"/profile/" + lang}>{lang === "fa" ? "پروفایل" : "Profile"}</Link>
-        <Link to={"/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
+        <Link to={"/cry/record/" + lang}>{lang === "fa" ? "ضبط صدا" : "Record"}</Link>
         <Link to={"/about/" + lang}>{lang === "fa" ? "درباره ما" : "About"}</Link>
       </div>
     );
