@@ -15,7 +15,7 @@ import Record from "./components/common/autism/record/Record";
 class App extends React.Component {
   render() {
     return (
-      <Router basename="/autismtest">
+      <Router basename="/autism">
         <Switch>
           <Route
             exact="true"
