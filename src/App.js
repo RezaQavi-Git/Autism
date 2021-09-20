@@ -11,12 +11,18 @@ import About from "./components/common/about/About";
 import Profile from "./components/common/autism/profile/Profile";
 import Record from "./components/common/autism/record/Record";
 
-
 class App extends React.Component {
   render() {
     return (
       <Router basename="/autism">
         <Switch>
+          
+          <Route
+            exact="true"
+            path="/"
+            render={(props) => <Autism lang="fa" {...props} />}
+          ></Route>
+
           <Route
             exact="true"
             path="/fa"

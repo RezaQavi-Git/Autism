@@ -15,23 +15,33 @@ class Language extends React.Component {
     const lang = this.props.lang;
     const url = this.props.url;
     var path = window.location.pathname;
-    path = path.slice(0, path.length - 2);
-    if (lang === "en") {
-      return (
-        <div className="lang-button-en">
-          <a href={lang === "fa" ? path + "en" : path + "fa"}>
-            <img src={fa_img} alt="presian-lang" className="lang-img" />
-          </a>
-        </div>
-      );
-    } else {
+    if (path === "/autism/") {
       return (
         <div className="lang-button">
-          <a href={lang === "fa" ? path + "en" : path + "fa"}>
+          <a href="/autism/en">
             <img src={en_img} alt="english-lang" className="lang-img" />
           </a>
         </div>
       );
+    } else {
+      path = path.slice(0, path.length - 2);
+      if (lang === "en") {
+        return (
+          <div className="lang-button-en">
+            <a href={lang === "fa" ? path + "en" : path + "fa"}>
+              <img src={fa_img} alt="presian-lang" className="lang-img" />
+            </a>
+          </div>
+        );
+      } else {
+        return (
+          <div className="lang-button">
+            <a href={lang === "fa" ? path + "en" : path + "fa"}>
+              <img src={en_img} alt="english-lang" className="lang-img" />
+            </a>
+          </div>
+        );
+      }
     }
   }
 }
